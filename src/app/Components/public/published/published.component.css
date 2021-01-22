@@ -1,0 +1,9 @@
+.column {
+    width: 25%;
+    padding: 0 10px;
+  }
+.your-list{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

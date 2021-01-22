@@ -14,6 +14,8 @@ import { LibraryComponent } from './Components/public/library/library.component'
 import { AdminLoginComponent } from './Components/Auth/admin-login/admin-login.component';
 import { HeaderComponent } from './Components/Navigation/header/header.component';
 import { FooterComponent } from './Components/Navigation/footer/footer.component';
+import { PublishedComponent } from './Components/public/published/published.component';
+import { CreateStoryComponent } from './Components/public/create-story/create-story.component';
   // import { from } from 'rxjs';
 
 @NgModule({
@@ -26,7 +28,9 @@ import { FooterComponent } from './Components/Navigation/footer/footer.component
     LibraryComponent,
     AdminLoginComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PublishedComponent,
+    CreateStoryComponent
   ],
   imports: [
     BrowserModule,

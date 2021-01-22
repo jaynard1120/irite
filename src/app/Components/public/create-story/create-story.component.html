@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div class="card mt-3 text-center cloudy-knoxville-gradient">
+    <div class="card-body">
+        Create your own Story
+    </div>
+</div>
+
+<div class="row mt-4 mb-5 young-passion-gradient" style="width: 98%;margin: auto;">
+    <div class="col-sm-4 mt-5">
+        <mdb-card class="addImage">
+            <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+                <!-- <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img> -->
+                <a>
+                    <div class="mask"></div>
+                </a>
+            </div>
+            <mdb-card-body class="text-center">
+                <button style="margin-top: 70%;color: black;" mdbBtn gradient="aqua" class="waves-light rounded"
+                    mdbWavesEffect><i style="font-size: xx-large;" class="fa fa-plus"></i></button>
+
+            </mdb-card-body>
+        </mdb-card>
+    </div>
+    <div class="col-sm-8 mt-5 mb-5">
+        <mdb-card>
+            <mdb-card-body class="px-lg-5 pt-0">
+                <form class="text-center" style="color: #757575;">
+                    <div class="md-form mt-3">
+                        <input type="text" id="materialContactFormName" class="form-control" mdbInput>
+                        <label for="materialContactFormName"><span style="color: red;">*</span>Title</label>
+                    </div>
+                    <div class="md-form">
+                        <input type="text" id="materialContactFormEmail" class="form-control" mdbInput>
+                        <label for="materialContactFormEmail">Genre</label>
+                    </div>
+                    <span>Write your story here:</span>
+                    <div class="md-form">
+                        <textarea type="text" style="height: 400px;" id="materialContactFormMessage"
+                            class="form-control md-textarea" mdbInput></textarea>
+                        <label for="materialContactFormMessage">Story Flow</label>
+                    </div>
+                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right" mdbWavesEffect type="submit">Save as draft</button>
+                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right" mdbWavesEffect
+                        type="submit">PUBLISH</button>
+                </form>
+            </mdb-card-body>
+
+        </mdb-card>
+    </div>
+</div>
+
+<app-footer></app-footer>

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/Services/api.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-published',
+  templateUrl: './published.component.html',
+  styleUrls: ['./published.component.css']
 })
-export class HomeComponent implements OnInit {
+export class PublishedComponent implements OnInit {
 
   constructor(
     private service: ApiService
