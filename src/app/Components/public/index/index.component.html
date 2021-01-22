@@ -1,0 +1,67 @@
+<div >
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark purple" [containerInside]="false">
+      <mdb-navbar-brand><a class="navbar-brand" href=""><img class="navbar-brand" src="../assets/images/logo.png" width="60"
+            height="60" alt=""></a></mdb-navbar-brand>
+      <links>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>About</a>
+          </li>
+          <li class="nav-item">
+            <form class="form-inline waves-light" mdbWavesEffect>
+              <div class="md-form my-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search title here">
+              </div>
+            </form>
+          </li>
+        </ul>
+        <button class="btn btn-outline-light my-2 my-sm-0 " (click)="logIn()"><i class="fa fa-sign-in"></i> LOG IN</button>
+        <button class="btn btn-outline-light my-2 my-sm-0 ml-2" (click)="register()" ><i class="fa fa-user-plus"></i> SIGN UP</button>
+      </links>
+    </mdb-navbar>
+    </div>
+
+    <!-- Carousel and body of page-->
+
+
+<mdb-carousel class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg" alt="First slide">
+        <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Floyd Villamor</h3>
+        <p>Front End Developer</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(6).jpg" alt="Second slide">
+        <div class="mask rgba-black-strong waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Sarah Bautista</h3>
+        <p>Back End Developer</p>
+      </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+      <div class="view w-100">
+        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(9).jpg" alt="Third slide">
+        <div class="mask rgba-black-slight waves-light" mdbWavesEffect></div>
+      </div>
+      <div class="carousel-caption">
+        <h3 class="h3-responsive">Jonalyn Mobilla</h3>
+        <p>Back End Developer</p>
+      </div>
+    </mdb-carousel-item>
+  </mdb-carousel>
+<!-- <div *ngFor="let user of users">
+  <p>{{user.username}}</p>
+  <p>{{user.email}}</p>
+</div> -->
+
+<app-footer></app-footer>

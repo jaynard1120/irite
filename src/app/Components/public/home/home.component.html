@@ -1,0 +1,62 @@
+<app-header></app-header>
+
+
+<div class="main mt-4">
+  <div class="list">
+    <div class="d-flex">
+      <div class="card ml-3" style="width: 20rem;height: 400px;" *ngFor="let image of listBooks">
+        <img class="card-img-top" height="60%" src="{{image.image}}" alt="Card image cap">
+        <div class="card-body text-center">
+          <p class="card-title">{{image.title}}</p>
+          <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>View <i
+              class="fa fa-angle-double-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="category float-left">
+    <mdb-card>
+      <h6 class="card-title text-center mt-4">𝒞𝐻𝒪𝒪𝒮𝐸 𝒮𝒯𝒪𝑅𝐼𝐸𝒮 𝒯𝐻𝒜𝒯 𝒮𝒰𝐼𝒯 𝒴𝒪𝒰𝑅 𝒯𝒜𝒮𝒯𝐸</h6>
+      <mdb-card-body class="text-center">
+        <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>ROMANCE</a>
+        <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>FICTION</a>
+        <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>HORROR</a>
+        <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>THRILLER</a>
+        <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>SCIENCE FICTION</a>
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+</div>
+
+<!-- <app-footer></app-footer> -->
+<footer class="page-footer font-small cyan darken-3">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 py-5">
+        <div class="mb-5 flex-center">
+          <a class="fb-ic">
+            <mdb-icon fab icon="facebook" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a>
+          <a class="tw-ic">
+              <mdb-icon fab icon="twitter" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a>
+          <a class="gplus-ic">
+              <mdb-icon fab fab icon="google-plus" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a>
+          <a class="li-ic">
+              <mdb-icon fab icon="linkedin" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a>
+          <a class="ins-ic">
+              <mdb-icon fab icon="instagram" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a>
+          <a class="pin-ic">
+              <mdb-icon fab icon="pinterest" size="2x" class="white-text mr-md-5 mr-3"></mdb-icon>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+  </div>
+</footer>

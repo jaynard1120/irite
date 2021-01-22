@@ -1,0 +1,32 @@
+<div class="container card card-3 mt-3 alert-primary">
+    <div style="padding: 4%;">
+        <div class="container-left right-back">
+            <div class="content rounded-circle" style="padding: 10%;margin-top: 25%;">
+                <p>𝓦𝓮𝓵𝓬𝓸𝓶𝓮 𝓽𝓸</p>
+                <p>𝓲𝓡𝓲𝓽𝓮</p>
+                <small>𝓦𝓱𝓮𝓻𝓮 𝓼𝓱𝓸𝓻𝓽 𝓼𝓽𝓸𝓻𝓲𝓮𝓼 <br> 𝔂𝓸𝓾 𝓵𝓸𝓿𝓮𝓭
+                    𝓵𝓲𝓿𝓮𝓭.</small>
+            </div>
+        </div>
+        <div class="right">
+            <form class="form pt-3 pb-5" #loginForm="ngForm" (ngSubmit)=login(loginForm.value) autocomplete="off">
+                <div class="icon-header">
+                    <span>-----</span><i class="fa fa-user"></i><span>-----</span>
+                </div>
+                <p class="sign">Sign In</p>
+                <div class="">
+                    <div class="input-group">
+                        <input type="text" class="input--style-3" ngModel placeholder="Username or Email"
+                            name="username" required autocomplete='off'>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" class="input--style-3" ngModel placeholder="Password" name="password"
+                            required autocomplete='off'>
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-secondary">LOGIN</button>
+                    <p style="color: black;font-size: small;" class="text-center mt-3">Not Registered? <a style="color: blue;cursor: pointer;"href="register" >Create Account</a> </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
