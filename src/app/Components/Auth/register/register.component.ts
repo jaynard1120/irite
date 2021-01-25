@@ -1,4 +1,4 @@
-import { FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, Validators, FormControl, FormGroup } from '@angular/forms';
 import { catchError } from 'rxjs/operators';
 import { ApiService } from './../../../Services/api.service';
 import { Component, OnInit } from '@angular/core';
@@ -23,8 +23,8 @@ export class RegisterComponent implements OnInit {
       dateOfBirth: ['',Validators.required],
       email: ['',[Validators.required,Validators.email]],
       password: ['',[Validators.required,Validators.minLength(8),Validators.maxLength(12)]],
-      password_confirmation: ['',Validators.required]
-    })
+      password_confirmation: ['',[Validators.required,,Validators.minLength(8),Validators.maxLength(12)]]
+    },{validator: this.confirmation('password','password_confirmation')})
   }
   // register(userData:any){
   //   console.log(userData)
@@ -40,9 +40,26 @@ export class RegisterComponent implements OnInit {
   }
 
   //Validation
-  input(){
-    return this.userAccount.controls;
-  }
+  // input(){
+  //   return this.userAccount.controls;
+  // }
 
+  confirmation(controlName: string, matchingControlName: string){
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
   
-}
+      if (matchingControl.errors && !matchingControl.errors.mustMatch) {
+        // return if another validator has already found an error on the matchingControl
+        return;
+      }
+      // set error on matchingControl if validation fails
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ mustMatch: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
+    }
+    }
+  }
+    

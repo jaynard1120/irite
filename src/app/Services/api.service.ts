@@ -15,17 +15,17 @@ export class ApiService {
   }
 
   public login(userAccount: Login){
-    return this.httpClient.post<any>("http://127.0.0.1:8000/api/login",userAccount)
+    return this.httpClient.post<any>(this.url+"login",userAccount)
   }
 
   public addStory(story:any){
-    return this.httpClient.post<any>("http://127.0.0.1:8000/api/add_story/1",story)
+    return this.httpClient.post<any>(this.url+"add_story/1",story)
   }
 
   errors = []
   json:any;
   public register(userData: any){
-     return this.httpClient.post<any>("http://127.0.0.1:8000/api/register", userData)
+     return this.httpClient.post<any>(this.url+"register", userData)
     //  http://127.0.0.1:8000/api/
     //  .pipe(
     //    catchError(this.errorHandler)

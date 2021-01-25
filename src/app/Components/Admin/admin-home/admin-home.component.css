@@ -1,0 +1,9 @@
+.vertical-scrollable { 
+    /* position: absolute;  */
+    /* top: 120px; 
+    bottom: 100px; 
+    left: 180px; 
+    width: 70%;  */
+    overflow-y: scroll; 
+    height: 50%; 
+  } 
