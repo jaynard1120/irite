@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/IRite",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

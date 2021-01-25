@@ -1,4 +1,4 @@
-<div class="container card card-3 mt-3 alert-primary">
+<!-- <div class="container card card-3 mt-3 alert-primary">
     <div style="padding: 4%;">
         <div class="container-left right-back">
             <div class="content rounded-circle" style="padding: 10%;margin-top: 25%;">
@@ -29,4 +29,44 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
+
+<section class="w3l-forms-23" style="background-image: url('../../../../assets/images/userBack.jpg');">
+    <div class="forms23-block-hny">
+        <div class="wrapper">
+
+            <h1>User Login</h1>
+
+            <div class="display-ad" style="margin: 8px auto; display: block; text-align:center;">
+            </div>
+
+            <div class="d-grid forms23-grids">
+                <div class="form23">
+                    <div class="main-bg" style="background-image: url('../../../../assets/images/userFront.jpg');">
+                        <h6 class="sec-one">Welcome to iRite</h6>
+                        <div class="speci-login first-look">
+                            <i class="fa fa-user mt-1" style="font-size: xx-large;"></i>
+                        </div>
+                    </div>
+                    <div class="bottom-content">
+                        <form #loginForm="ngForm" (ngSubmit)=login(loginForm.value) autocomplete="off">
+                            <div class="md-form mt-3">
+                                <input type="text" id="email" name="email"
+                                    class="form-control" mdbInput ngModel>
+                                <label for="email">Email</label>
+                            </div>
+                            <div class="md-form mt-3">
+                                <input type="password" id="password" name="password"
+                                    class="form-control" mdbInput ngModel>
+                                <label for="password">Password</label>
+                            </div>
+                            <button mdbBtn type="submit" class="rounded" gradient="aqua" mdbWavesEffect><i
+                                    class="fa fa-sign-in"></i> Login</button>
+                                    <p style="color: black;font-size: small;" class="text-center mt-3">Not Registered? <a style="color: blue;cursor: pointer;"href="register" >Create Account</a> </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

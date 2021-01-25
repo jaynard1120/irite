@@ -1,9 +1,15 @@
 .column {
-    width: 25%;
+  margin: auto;
+    width: 30%;
     padding: 0 10px;
+    justify-content: space-evenly;
   }
 .your-list{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+.row{
+  width: 90%;
+  margin: auto;
 }

@@ -20,12 +20,8 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     // this.service.getUsers(this.url).subscribe(res => this.users = res)
   }
-  logIn(){
-    this.service.footer = false;
-    this.router.navigate(['login']);
-  }
-  register(){
-    this.service.footer = false;
-    this.router.navigate(['register'])
+
+  search(data:any){
+    this.router.navigate(['login'])
   }
 }

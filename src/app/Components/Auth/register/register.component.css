@@ -1,8 +1,7 @@
-.card-3 {
+/* .card-3 {
     border-radius: 20px;
     box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
     width: 70%;
-    /* max-height: 100%; */
     height:fit-content ;
     display: table;
     margin: auto;
@@ -22,10 +21,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-/* .form input{
-    width: 100%;
-} */
 ::placeholder{
     color: rgb(66, 15, 82);
 }
@@ -81,4 +76,9 @@
     .right-back{min-height: 80vh;}
     .switch{font-size: smaller;}
     .terms{font-size: smaller;}
+} */
+
+
+.form23{
+    width: 70%;
 }

@@ -1,3 +1,4 @@
+import { LibraryComponent } from './Components/public/library/library.component';
 import { AppComponent } from './app.component';
 import { AdminLoginComponent } from './Components/Auth/admin-login/admin-login.component';
 import { HomeComponent } from './Components/public/home/home.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: "create-stories", component: CreateStoryComponent, pathMatch:"full"},
   {path: "your_published_stories", component: PublishedComponent, pathMatch:"full"},
   {path: "admin", component: AdminLoginComponent, pathMatch:"full"},
+  {path: "library", component: LibraryComponent, pathMatch:"full"},
   {path: "*", component: IndexComponent}
 ];
 

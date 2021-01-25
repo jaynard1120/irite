@@ -1,4 +1,4 @@
-<section class="w3l-forms-23">
+<section class="w3l-forms-23" style="background-image: url('../../../../assets/images/laptop.jpg');">
     <div class="forms23-block-hny">
         <div class="wrapper">
 
@@ -9,17 +9,17 @@
 
             <div class="d-grid forms23-grids">
                 <div class="form23">
-                    <div class="main-bg">
-                        <h6 class="sec-one">Welcome</h6>
+                    <div class="main-bg" style="background-image: url('../../../../assets/images/right-background.jpg');">
+                        <h6 class="sec-one">Welcome to iRite</h6>
                         <div class="speci-login first-look">
                            <i class="fa fa-user mt-1" style="font-size: xx-large;"></i>
                         </div>
                     </div>
                     <div class="bottom-content">
-                        <form action="#" method="post">
-                            <input type="email" name="email" class="input-form" placeholder="Your Email"
+                        <form #admin="ngForm" (ngSubmit)="adminLogin(admin.value)" autocomplete="off">
+                            <input type="email" name="email" ngModel class="input-form" placeholder="Your Email"
                                 required="required" />
-                            <input type="password" name="password" class="input-form" placeholder="Your Password"
+                            <input type="password" name="password" ngModel class="input-form" placeholder="Your Password"
                                 required="required" />
                             <button type="submit" class="loginhny-btn btn">Login</button>
                         </form>

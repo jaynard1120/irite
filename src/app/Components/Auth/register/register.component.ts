@@ -1,3 +1,4 @@
+import { catchError } from 'rxjs/operators';
 import { ApiService } from './../../../Services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -17,13 +18,16 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     
   }
-  register(userData:any){
-    console.log(userData)
-  }
   // register(userData:any){
-  //   console.log(userData);
-  //   this.service.register(userData).subscribe(res => console.log(res))
+  //   console.log(userData)
   // }
+  register(userData:any){
+    this.service.register(userData).subscribe(res => console.log(res)
+    )
+    // this.router.navigate(['login'])
+    // this.service.getError().subscribe((res) => console.log(res)
+    
+  }
 
 
   

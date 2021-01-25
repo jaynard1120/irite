@@ -10,15 +10,9 @@
     </mdb-card-body>
   </mdb-card>
 
-<div class="row mb-5 mt-5">
+<div class="row mb-5">
   <div class="column mt-5" *ngFor=" let image of listBooks">
-    <div class="card">
-      <img class="card-img-top" height="60%" src="{{image.image}}" alt="Card image cap">
-      <div class="card-body text-center">
-        <p class="card-title">{{image.title}}</p>
-        <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>View <i class="fa fa-angle-double-right"></i></a>
-      </div>
-    </div>
+    <app-cover-book [cover]=image></app-cover-book>
   </div>
 </div>
 

@@ -1,1 +1,37 @@
-<p>library works!</p>
+<app-header></app-header>
+
+<!-- <div class="card shadow-lg">
+    <img class="card-img-top" height="350px" src="{{cover.image}}" alt="Card image cap">
+    <div class="card-body text-center">
+      <p class="card-title">{{cover.title}}</p>
+      <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect>View <i
+          class="fa fa-angle-double-right"></i></a>
+      <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect> <i class="fa fa-plus">
+          Add</i></a>
+    </div>
+  </div> -->
+
+<div class="row">
+    <div class="column">
+        <img src="../../../../assets/images/romance1.jpg" alt="Nature" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="../../../../assets/images/romance2.jpg" alt="Snow" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="../../../../assets/images/romance4.webp" alt="Mountains" style="width:100%" onclick="myFunction(this);">
+    </div>
+    <div class="column">
+        <img src="../../../../assets/images/romance3.jpg" alt="Lights" style="width:100%" onclick="myFunction(this);">
+    </div>
+</div>
+
+
+
+<div class="container">
+    <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+    <img id="expandedImg" style="width:100%">
+    <div id="imgtext"></div>
+</div>
+
+<app-footer></app-footer>

@@ -3,11 +3,18 @@
   }
   
   .column {
-    width: 25%;
+    width: 30%;
     padding: 0 10px;
+    margin: auto;
+    height: 80%;
+    /* box-shadow: 2px grey; */
   }
   .category{
     font-size: xx-large;
+    }
+    .row{
+      width: 90%;
+      margin: auto;
     }
   @media screen and (max-width: 600px) {
     .column {

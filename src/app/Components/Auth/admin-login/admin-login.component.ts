@@ -1,4 +1,6 @@
+import { ApiService } from 'src/app/Services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminLoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private service: ApiService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  adminLogin(data:any){
+    this.service.login(data).subscribe(res => {
+      console.log(res)
+      // if(res[0] == "This credentials don't match!"){
+      //   alert("Error in Logging in!")
+      // }else{
+      //   alert("Success!")
+      //   this.router.navigate(['create_stories'])
+      // }
+    })
   }
 
 }

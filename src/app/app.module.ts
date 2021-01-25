@@ -1,8 +1,9 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
+import { AngularEditorModule } from '@kolkov/angular-editor';
 // import { MDBBootstrapModulesPro, MDB_DATE_OPTIONS } from 'ng-uikit-pro-standard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { HeaderComponent } from './Components/Navigation/header/header.component
 import { FooterComponent } from './Components/Navigation/footer/footer.component';
 import { PublishedComponent } from './Components/public/published/published.component';
 import { CreateStoryComponent } from './Components/public/create-story/create-story.component';
+import { CoverBookComponent } from './Components/public/cover-book/cover-book.component';
   // import { from } from 'rxjs';
 
 @NgModule({
@@ -30,14 +32,17 @@ import { CreateStoryComponent } from './Components/public/create-story/create-st
     HeaderComponent,
     FooterComponent,
     PublishedComponent,
-    CreateStoryComponent
+    CreateStoryComponent,
+    CoverBookComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    AngularEditorModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [

@@ -1,4 +1,4 @@
-<div class="container card card-3 mt-3 alert-primary">
+<!-- <div class="container card card-3 mt-3 alert-primary">
     <div style="padding: 4%;">
         <div class="container-left right-back">
             <div class="content rounded-circle" style="padding: 10%;margin-top: 25%;">
@@ -47,25 +47,9 @@
                           <span class="input-group-text md-addon" id="inputGroupMaterial-sizing-sm">Confirm Pass:</span>
                         </div>
                         <input type="password" class="form-control" name="confirm_password" ngModel aria-label="Sizing example input" aria-describedby="inputGroupMaterial-sizing-sm">
-                      </div>
-                        <!-- <div class="form-outline input-group md-form">
-                            <input type="text" class="input--style-3" ngModel name="username" placeholder="Username" mdbInput/>
-                        </div> -->
-                        <!-- <div class="form-outline input-group mdb-form">
-                            <input type="date" class="input--style-3" name="birthday" mdbInput>
-                            
-                        </div> -->
-                    <!-- <div class="form-outline input-group mdb-form">
-                        <input type="email" class="input--style-3" ngModel name="email" placeholder="Email" mdbInput/>
-                    </div>
-                    <div class="form-outline input-group mdb-form">
-                        <input type="password" class="input--style-3" ngModel name="password" placeholder="Password" mdbInput/>
-                    </div>
-                    <div class="form-outline input-group mdb-form">
-                        <input type="password" class="input--style-3" ngModel name="password"
-                            placeholder="Confirm Password" mdbInput/>
-                    </div> -->
-                    <p class="terms">
+                      </div> -->
+
+<!-- <p class="terms">
                         <input type="checkbox" id="agreement" style="width: fit-content;margin-left: 5%;"
                             name="agreement" value="accepted"> I accept the <span class="link">Terms of Use
                         </span>&<span class="link"> Privacy Policy</span>
@@ -78,7 +62,7 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- <div style="width: 70%;" class="bg-danger">
     <div class="bg-warning right-back container-left" style="width: 50%;float: left;">
@@ -116,14 +100,81 @@
     </div> -->
 
 
+<section class="w3l-forms-23" style="background-image: url('../../../../assets/images/registerBack.jpg');">
+  <div class="forms23-block-hny">
+    <div class="wrapper">
 
-<!-- <div class="form-check d-flex justify-content-center mb-4">
-      <input
-        class="form-check-input me-2"
-        type="checkbox"
-        value=""
-        id="form2Example3"
-        checked
-      />
-      
-    </div> -->
+      <h1>Register to 𝓲𝓡𝓲𝓽𝓮</h1>
+
+      <div class="display-ad" style="margin: 8px auto; display: block; text-align:center;">
+      </div>
+
+      <div class="d-grid forms23-grids">
+        <div class="form23">
+          <div class="main-bg" style="background-image: url('../../../../assets/images/registerFront.jpg');">
+            <h6 class="sec-one">𝓦𝓱𝓮𝓻𝓮 𝓼𝓱𝓸𝓻𝓽 𝓼𝓽𝓸𝓻𝓲𝓮𝓼 <br> 𝔂𝓸𝓾 𝓵𝓸𝓿𝓮,
+                𝓵𝓲𝓿𝓮𝓭.</h6>
+            <div class="speci-login first-look">
+              <i class="fa fa-user mt-1" style="font-size: xx-large;"></i>
+            </div>
+          </div>
+          <div class="bottom-content">
+            <form #registerForm="ngForm" (ngSubmit)=register(registerForm.value) autocomplete="off">
+              <div class="form-row">
+                <div class="col">
+                  <!-- First name -->
+                  <div class="md-form">
+                    <input type="text" id="materialRegisterFormFirstName" ngModel name="username" class="form-control" mdbInput>
+                    <label for="materialRegisterFormFirstName">Username</label>
+                  </div>
+                </div>
+                <div class="col">
+                  <!-- Birthdate-->
+                  <div class="md-form">
+                    <input type="date" id="materialRegisterFormLastName" ngModel name="dateOfBirth" class="form-control" mdbInput>
+                    <label for="materialRegisterFormLastName">Date of Birth: </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- E-mail -->
+              <div class="md-form mt-0">
+                <input type="email" id="materialRegisterFormEmail" name="email" ngModel class="form-control" mdbInput>
+                <label for="materialRegisterFormEmail">E-mail</label>
+              </div>
+
+              <!-- Password -->
+              <div class="md-form">
+                <input type="password" id="materialRegisterFormPassword" ngModel name="password" class="form-control"
+                  aria-describedby="materialRegisterFormPasswordHelpBlock" mdbInput>
+                <label for="materialRegisterFormPassword">Password</label>
+                <!-- <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                  At least 8 characters and 1 digit
+                </small> -->
+              </div>
+              <div class="md-form">
+                <input type="password" id="materialRegisterFormPhone" ngModel name="password_confirmation" class="form-control"
+                  aria-describedby="materialRegisterFormPhoneHelpBlock" mdbInput>
+                <label for="materialRegisterFormPhone">Confirm Password</label>
+                <!-- <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
+                  Optional - for two-step authentication
+                </small> -->
+              </div>
+              <div class="row">
+        <div class="mx-auto d-flex justify-content-start">
+          <mdb-checkbox [default]="true">I accept the <a class="link">Terms of Use
+                        </a>&<a class="link"> Privacy Policy</a></mdb-checkbox>
+        </div>
+      </div>
+              <button mdbBtn type="submit" gradient="aqua" mdbWavesEffect><i class="fa fa-user-plus"></i>
+                Register</button>
+              <p >Already have an account? <a href="login">Login</a>. </p>
+              <p class="terms">
+              
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
