@@ -19,7 +19,7 @@ export class ApiService {
   }
 
   public addStory(story:any){
-    return this.httpClient.post<any>("http://127.0.0.1:8000/api/add_story",story)
+    return this.httpClient.post<any>("http://127.0.0.1:8000/api/add_story/1",story)
   }
 
   errors = []

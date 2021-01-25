@@ -113,64 +113,66 @@
         <div class="form23">
           <div class="main-bg" style="background-image: url('../../../../assets/images/registerFront.jpg');">
             <h6 class="sec-one">𝓦𝓱𝓮𝓻𝓮 𝓼𝓱𝓸𝓻𝓽 𝓼𝓽𝓸𝓻𝓲𝓮𝓼 <br> 𝔂𝓸𝓾 𝓵𝓸𝓿𝓮,
-                𝓵𝓲𝓿𝓮𝓭.</h6>
+              𝓵𝓲𝓿𝓮𝓭.</h6>
             <div class="speci-login first-look">
               <i class="fa fa-user mt-1" style="font-size: xx-large;"></i>
             </div>
           </div>
           <div class="bottom-content">
-            <form #registerForm="ngForm" (ngSubmit)=register(registerForm.value) autocomplete="off">
+            <form [formGroup]="userAccount" (ngSubmit)=register(userAccount.value) autocomplete="off">
               <div class="form-row">
                 <div class="col">
-                  <!-- First name -->
                   <div class="md-form">
-                    <input type="text" id="materialRegisterFormFirstName" ngModel name="username" class="form-control" mdbInput>
+                    <input type="text" id="materialRegisterFormFirstName" formControlName="username"
+                      class="form-control" mdbInput>
                     <label for="materialRegisterFormFirstName">Username</label>
+                    <!-- <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert-danger">
+                      <mdb-error class="alert-danger mt-1" style="width: 100%;">Username is invalid!</mdb-error>
+                      <mdb-error class="alert-danger mt-1" style="width: 100%;">Username is required!</mdb-error>
+                    </div> -->
                   </div>
                 </div>
                 <div class="col">
-                  <!-- Birthdate-->
                   <div class="md-form">
-                    <input type="date" id="materialRegisterFormLastName" ngModel name="dateOfBirth" class="form-control" mdbInput>
+                    <input type="date" id="materialRegisterFormLastName" formControlName="dateOfBirth"
+                      class="form-control" mdbInput>
                     <label for="materialRegisterFormLastName">Date of Birth: </label>
                   </div>
                 </div>
               </div>
 
-              <!-- E-mail -->
               <div class="md-form mt-0">
-                <input type="email" id="materialRegisterFormEmail" name="email" ngModel class="form-control" mdbInput>
+                <input type="email" id="materialRegisterFormEmail" formControlName="email" class="form-control"
+                  mdbInput>
                 <label for="materialRegisterFormEmail">E-mail</label>
+                <mdb-error class="alert-danger mt-1" style="width: 100%;">Email is invalid!</mdb-error>
+                <mdb-error class="alert-danger mt-1" style="width: 100%;">Email is required!</mdb-error>
               </div>
 
-              <!-- Password -->
               <div class="md-form">
-                <input type="password" id="materialRegisterFormPassword" ngModel name="password" class="form-control"
+                <input type="password" id="materialRegisterFormPassword" formControlName="password" class="form-control"
                   aria-describedby="materialRegisterFormPasswordHelpBlock" mdbInput>
                 <label for="materialRegisterFormPassword">Password</label>
-                <!-- <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                  At least 8 characters and 1 digit
-                </small> -->
+                <mdb-error class="alert-danger mt-1" style="width: 100%;">Password must be at least 8 and maximum of 12
+                  character!</mdb-error>
+                <mdb-error class="alert-danger mt-1" style="width: 100%;">Password is required!</mdb-error>
               </div>
               <div class="md-form">
-                <input type="password" id="materialRegisterFormPhone" ngModel name="password_confirmation" class="form-control"
-                  aria-describedby="materialRegisterFormPhoneHelpBlock" mdbInput>
+                <input type="password" id="materialRegisterFormPhone" formControlName="password_confirmation"
+                  class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" mdbInput>
                 <label for="materialRegisterFormPhone">Confirm Password</label>
-                <!-- <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                  Optional - for two-step authentication
-                </small> -->
+                <mdb-error class="alert-danger mt-1" style="width: 100%;">Password did not match!</mdb-error>
+                <mdb-error class="alert-danger mt-1" style="width: 100%;">Password is required!</mdb-error>
               </div>
               <div class="row">
-        <div class="mx-auto d-flex justify-content-start">
-          <mdb-checkbox [default]="true">I accept the <a class="link">Terms of Use
-                        </a>&<a class="link"> Privacy Policy</a></mdb-checkbox>
-        </div>
-      </div>
+                <div class="mx-auto d-flex justify-content-start">
+                  <mdb-checkbox [default]="true">I accept the <a class="link">Terms of Use
+                    </a>&<a class="link"> Privacy Policy</a></mdb-checkbox>
+                </div>
+              </div>
               <button mdbBtn type="submit" gradient="aqua" mdbWavesEffect><i class="fa fa-user-plus"></i>
                 Register</button>
-              <p >Already have an account? <a href="login">Login</a>. </p>
-              <p class="terms">
-              
+              <p>Already have an account? <a href="login">Login</a>. </p>
             </form>
           </div>
         </div>
@@ -178,3 +180,12 @@
     </div>
   </div>
 </section>
+
+
+
+<!-- [ngClass]="{'is-invalid' : addRecipe.get('category').touched && addRecipe.get('category').invalid}"
+<div *ngIf="addRecipe.get('procedures').touched && addRecipe.get('procedures').invalid" id="procedures-feedback"
+  class="invalid-feedback">
+  <p *ngIf="addRecipe.get('procedures').errors.required">This field is required</p>
+  <p *ngIf="addRecipe.get('procedures').errors.minlength">Procedure must be atleast 4 characters</p>
+</div> -->

@@ -16,7 +16,7 @@
                 </a>
             </div>
             <mdb-card-body class="text-center">
-                <input hidden type='file' id="imageUpload" accept=".png, .jpg, .jpeg" #fileInput (change)="handleFileInput($event)" />
+                <input hidden type='file' id="imageUpload" accept=".png, .jpg, .jpeg" [(ngModel)]="image" #fileInput (change)="handleFileInput($event)" />
                 <button style="margin-top: 70%;color: black;" mdbBtn gradient="aqua" class="waves-light rounded" type="file"
                 (click)="fileInput.click()" mdbWavesEffect><i style="font-size: xx-large;" class="fa fa-plus"></i></button>
 
