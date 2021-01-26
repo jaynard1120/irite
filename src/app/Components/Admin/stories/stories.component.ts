@@ -1,3 +1,4 @@
+import { ApiService } from 'src/app/Services/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stories.component.css']
 })
 export class StoriesComponent implements OnInit {
-
-  constructor() { }
-
+  stories:any;
+  constructor(
+    private service: ApiService
+  ) { }
   ngOnInit(): void {
+    this.service.getStory().subscribe(res => {
+      this.stories = res
+    })
   }
 
 }

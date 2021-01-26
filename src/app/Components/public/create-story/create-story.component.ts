@@ -58,10 +58,14 @@ export class CreateStoryComponent implements OnInit {
     this.getKeys({"romance":this.book.value.romance,"fiction":this.book.value.fiction,
     "horror":this.book.value.thriller,"scifi":this.book.value.scifi,"thriller":this.book.value.thriller})
     this.service.addStory({"title": this.book.value.title, "genre":this.newGenre,"blurb":this.book.value.blurb,"storyFlow":this.book.value.story})
-    .subscribe(res => console.log(res))
-    console.log(this.book.value);
+      .subscribe(response => {
+        // Swal.fire("Good job!", "You clicked the button!", "success");
+      },error => {
 
-
+      })
+    
+    // .subscribe(res => console.log(res))
+    // console.log(this.book.value);
   }
 
 

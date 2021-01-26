@@ -1,3 +1,4 @@
+import { ApiService } from 'src/app/Services/api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private service : ApiService
+  ) { }
 
   ngOnInit(): void {
   }
 
   logout(){
-    
+    this.service.logout().subscribe(res => {
+      localStorage.removeItem('name');
+      console.log(res)
+    },error=>{
+      console.log(error)
+    })
   }
 
 }

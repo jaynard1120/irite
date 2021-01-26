@@ -9,6 +9,8 @@ export class ApiService {
     // this.httpClient.post()
   }
 
+  userId = ''
+
   public getUsers():Observable<any> {
     return this.httpClient.get(this.url+"users")
     .pipe(catchError(this.errorHandler))
@@ -19,7 +21,7 @@ export class ApiService {
   }
 
   public addStory(story:any){
-    return this.httpClient.post<any>(this.url+"add_story/1",story)
+    return this.httpClient.post<any>(this.url+`add_story/${this.userId}`,story)
   }
 
   errors = []
@@ -28,21 +30,17 @@ export class ApiService {
      return this.httpClient.post<any>(this.url+"register", userData)
   }
 
-  // .toPromise().then((data: any) => {
-  // })
-  // public getError():Observable<any>{
-  //   return this.httpClient.get(this.url)
-  //   .pipe(catchError(this.errorHandler))
-  // }
+  public getStory():Observable<any>{
+    return this.httpClient.get(this.url+"get_story")
+  }
+
+  public logout(){
+    console.log(this.userId)
+    return this.httpClient.post<any>(this.url+`logout/${this.userId}`,true)
+  }
 
 logErrors: any;
 errorHandler(error: HttpErrorResponse){
-  // if (error.error instanceof ErrorEvent) {
-  //   console.error('An error occurred:', error.error.message);
-  // } else {
-  //   console.error(error.error.message);
-  //   console.error(error.error.errors);
-  // }
   this.logErrors = error.error.errors
   return error.error.errors
 }

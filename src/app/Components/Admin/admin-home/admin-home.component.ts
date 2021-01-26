@@ -14,7 +14,7 @@ export class AdminHomeComponent implements OnInit {
   }
 
   logout(){
-    
+    localStorage.removeItem('admin')
   }
 
 }

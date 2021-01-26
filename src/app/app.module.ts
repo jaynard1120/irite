@@ -20,6 +20,7 @@ import { CreateStoryComponent } from './Components/public/create-story/create-st
 import { CoverBookComponent } from './Components/public/cover-book/cover-book.component';
 import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
 import { StoriesComponent } from './Components/Admin/stories/stories.component';
+import { StoryComponent } from './Components/Admin/story/story.component';
   // import { from } from 'rxjs';
 
 @NgModule({
@@ -37,7 +38,8 @@ import { StoriesComponent } from './Components/Admin/stories/stories.component';
     CreateStoryComponent,
     CoverBookComponent,
     AdminHomeComponent,
-    StoriesComponent
+    StoriesComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,

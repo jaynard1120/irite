@@ -1,0 +1,53 @@
+<div class="main">
+    <!-- <div class="container">
+        <div class="row">
+        <div class="col">
+            <div class="card" style="width:300px">
+                <img class="card-img-top" src="https://cf.bstatic.com/images/hotel/max1024x768/241/241074099.jpg"
+                    alt="Card image">
+                <div class=" text-center p-3">
+                    <div>
+                        <H3> {{story.title}}</H3>
+                    </div>
+                    <button type="button" class="btn btn-info " (click)="basicModal.show()">REVIEW STORY</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div> -->
+
+    <div class="gallery">
+        <a target="_blank" href="https://cf.bstatic.com/images/hotel/max1024x768/241/241074099.jpg">
+            <img src="https://cf.bstatic.com/images/hotel/max1024x768/241/241074099.jpg" alt="Cinque Terre" width="600"
+                height="400">
+        </a>
+        <div class="text-center">
+            <div class="desc">{{story.title}}</div>
+            <button mdbBtn type="button" color="purple" class="btn review" (click)="basicModal.show()"><i
+                    class="fa fa-eye"></i> REVIEW STORY</button>
+        </div>
+    </div>
+
+    <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
+        aria-labelledby="myBasicModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title w-100" id="myModalLabel">{{story.title}}</h4>
+                </div>
+                <div class="modal-body body">
+                    {{story.story_flow}}
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" mdbBtn color="secondary" class="waves-light  rounded" mdbWavesEffect><i
+                            class="fa fa-thumbs-up"></i> Approve</button>
+                    <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect><i
+                            class="fa fa-thumbs-down"></i> Decline</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
