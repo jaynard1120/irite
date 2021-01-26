@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         } else {
           localStorage.setItem("admin", res.token)
           console.log(res.user.usertype)
-          this.router.navigate(['home'])
+          this.router.navigate(['admin'])
         }
       }
 
