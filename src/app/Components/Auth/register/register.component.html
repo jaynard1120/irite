@@ -113,64 +113,105 @@
         <div class="form23">
           <div class="main-bg" style="background-image: url('../../../../assets/images/registerFront.jpg');">
             <h6 class="sec-one">𝓦𝓱𝓮𝓻𝓮 𝓼𝓱𝓸𝓻𝓽 𝓼𝓽𝓸𝓻𝓲𝓮𝓼 <br> 𝔂𝓸𝓾 𝓵𝓸𝓿𝓮,
-                𝓵𝓲𝓿𝓮𝓭.</h6>
+              𝓵𝓲𝓿𝓮𝓭.</h6>
             <div class="speci-login first-look">
               <i class="fa fa-user mt-1" style="font-size: xx-large;"></i>
             </div>
           </div>
           <div class="bottom-content">
-            <form #registerForm="ngForm" (ngSubmit)=register(registerForm.value) autocomplete="off">
+            <form [formGroup]="userAccount" (ngSubmit)=register(userAccount.value) autocomplete="off">
               <div class="form-row">
                 <div class="col">
-                  <!-- First name -->
                   <div class="md-form">
-                    <input type="text" id="materialRegisterFormFirstName" ngModel name="username" class="form-control" mdbInput>
+                    <input type="text" id="materialRegisterFormFirstName" formControlName="username"
+                      [ngClass]="{'is-invalid' : userAccount.get('username').touched && userAccount.get('username').invalid}"
+                      class="form-control" mdbInput>
                     <label for="materialRegisterFormFirstName">Username</label>
+                    <div *ngIf="userAccount.get('username').touched && userAccount.get('username').invalid"
+                      id="procedures-feedback" class="invalid-feedback">
+                      <mdb-error class="alert-danger mt-1" *ngIf="userAccount.get('username').errors.required"
+                        style="width: 100%;">Username is required!
+                      </mdb-error>
+                      <mdb-error class="alert-danger mt-1"
+                        *ngIf="userAccount.get('username').errors.minlength || userAccount.get('username').errors.maxlength"
+                        style="width: 100%;">Username is invalid!</mdb-error>
+                    </div>
+
                   </div>
                 </div>
                 <div class="col">
-                  <!-- Birthdate-->
                   <div class="md-form">
-                    <input type="date" id="materialRegisterFormLastName" ngModel name="dateOfBirth" class="form-control" mdbInput>
+                    <input type="date" id="materialRegisterFormLastName" formControlName="dateOfBirth"
+                      [ngClass]="{'is-invalid' : userAccount.get('dateOfBirth').touched && userAccount.get('dateOfBirth').invalid}"
+                      class="form-control" mdbInput>
                     <label for="materialRegisterFormLastName">Date of Birth: </label>
+                    <div *ngIf="userAccount.get('dateOfBirth').touched && userAccount.get('dateOfBirth').invalid"
+                      id="procedures-feedback" class="invalid-feedback">
+                      <mdb-error class="alert-danger mt-1" *ngIf="userAccount.get('dateOfBirth').errors.required"
+                        style="width: 100%;">Birthdate is required!</mdb-error>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <!-- E-mail -->
               <div class="md-form mt-0">
-                <input type="email" id="materialRegisterFormEmail" name="email" ngModel class="form-control" mdbInput>
+                <input type="email" id="materialRegisterFormEmail" formControlName="email" class="form-control"
+                  [ngClass]="{'is-invalid' : userAccount.get('email').touched && userAccount.get('email').invalid}"
+                  mdbInput>
                 <label for="materialRegisterFormEmail">E-mail</label>
+                <div *ngIf="userAccount.get('email').touched && userAccount.get('email').invalid"
+                  id="procedures-feedback" class="invalid-feedback">
+                  <mdb-error class="alert-danger mt-1" *ngIf="userAccount.get('email').errors.required"
+                    style="width: 100%;">Email is required!</mdb-error>
+                  <mdb-error class="alert-danger mt-1" *ngIf="userAccount.get('email').errors.email"
+                    style="width: 100%;">Email is invalid!</mdb-error>
+                </div>
+
               </div>
 
-              <!-- Password -->
               <div class="md-form">
-                <input type="password" id="materialRegisterFormPassword" ngModel name="password" class="form-control"
+                <input type="password" id="materialRegisterFormPassword" formControlName="password" class="form-control"
+                  [ngClass]="{'is-invalid' : userAccount.get('password').touched && userAccount.get('password').invalid}"
                   aria-describedby="materialRegisterFormPasswordHelpBlock" mdbInput>
                 <label for="materialRegisterFormPassword">Password</label>
-                <!-- <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-                  At least 8 characters and 1 digit
-                </small> -->
+                <div *ngIf="userAccount.get('password').touched && userAccount.get('password').invalid"
+                  id="procedures-feedback" class="invalid-feedback">
+                  <mdb-error class="alert-danger mt-1" *ngIf="userAccount.get('password').errors.required"
+                    style="width: 100%;">Password is required!</mdb-error>
+                  <mdb-error class="alert-danger mt-1"
+                    *ngIf="userAccount.get('password').errors.minlength || userAccount.get('password').errors.maxlength"
+                    style="width: 100%;">
+                    Password must be at least 8 and maximum of 12 character!
+                  </mdb-error>
+                </div>
               </div>
               <div class="md-form">
-                <input type="password" id="materialRegisterFormPhone" ngModel name="password_confirmation" class="form-control"
-                  aria-describedby="materialRegisterFormPhoneHelpBlock" mdbInput>
+                <input type="password" id="materialRegisterFormPhone" formControlName="password_confirmation"
+                [ngClass]="{'is-invalid' : userAccount.get('password_confirmation').touched && userAccount.get('password_confirmation').invalid}"
+                  class="form-control" aria-describedby="materialRegisterFormPhoneHelpBlock" mdbInput>
                 <label for="materialRegisterFormPhone">Confirm Password</label>
-                <!-- <small id="materialRegisterFormPhoneHelpBlock" class="form-text text-muted mb-4">
-                  Optional - for two-step authentication
-                </small> -->
+                <div *ngIf="userAccount.get('password_confirmation').touched && userAccount.get('password_confirmation').invalid && userAccount.get('password_confirmation').errors"
+                  id="procedures-feedback" class="invalid-feedback">
+                  <mdb-error class="alert-danger mt-1" *ngIf="userAccount.get('password_confirmation').errors.required"
+                    style="width: 100%;">Password is required!</mdb-error>
+                  <mdb-error class="alert-danger mt-1"
+                    *ngIf="userAccount.get('password_confirmation').errors.minlength || userAccount.get('password_confirmation').errors.maxlength || userAccount.get('password_confirmation').errors.confirmation"
+                    style="width: 100%;">
+                    Password doesn't match!
+                  </mdb-error>
+                </div>
               </div>
               <div class="row">
-        <div class="mx-auto d-flex justify-content-start">
-          <mdb-checkbox [default]="true">I accept the <a class="link">Terms of Use
-                        </a>&<a class="link"> Privacy Policy</a></mdb-checkbox>
-        </div>
-      </div>
-              <button mdbBtn type="submit" gradient="aqua" mdbWavesEffect><i class="fa fa-user-plus"></i>
-                Register</button>
-              <p >Already have an account? <a href="login">Login</a>. </p>
-              <p class="terms">
-              
+                <div class="mx-auto d-flex justify-content-start">
+                  <mdb-checkbox [default]="true">I accept the <a class="link">Terms of Use
+                    </a>&<a class="link"> Privacy Policy</a></mdb-checkbox>
+                </div>
+              </div>
+              <button mdbBtn type="submit" [disabled]="userAccount.invalid && icon" gradient="aqua" mdbWavesEffect>
+                <i [hidden]="!icon" class='fa fa-user-plus'></i>
+                <span class="spinner-border spinner-border-sm text-secondary" role="status" aria-hidden="true" [hidden]="icon"></span>
+                {{button}}</button>
+              <p>Already have an account? <a href="login"> Login</a>. </p>
             </form>
           </div>
         </div>
@@ -178,3 +219,12 @@
     </div>
   </div>
 </section>
+
+<!-- <button mdbBtn color="primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span class="sr-only">Loading...</span>
+</button>
+<button mdbBtn color="primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button> -->

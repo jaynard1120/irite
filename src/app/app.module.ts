@@ -18,6 +18,8 @@ import { FooterComponent } from './Components/Navigation/footer/footer.component
 import { PublishedComponent } from './Components/public/published/published.component';
 import { CreateStoryComponent } from './Components/public/create-story/create-story.component';
 import { CoverBookComponent } from './Components/public/cover-book/cover-book.component';
+import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
+import { StoriesComponent } from './Components/Admin/stories/stories.component';
   // import { from } from 'rxjs';
 
 @NgModule({
@@ -33,7 +35,9 @@ import { CoverBookComponent } from './Components/public/cover-book/cover-book.co
     FooterComponent,
     PublishedComponent,
     CreateStoryComponent,
-    CoverBookComponent
+    CoverBookComponent,
+    AdminHomeComponent,
+    StoriesComponent
   ],
   imports: [
     BrowserModule,

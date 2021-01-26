@@ -1,6 +1,7 @@
 import { ApiService } from './../../../Services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -8,48 +9,49 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
   constructor(
     private service: ApiService,
     private router: Router
   ) { }
-  
-  userLogin(userInfo:any){
-    console.log(userInfo.value);
-    
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + localStorage.getItem('name')
+    })
   }
-  user:any = [];
-  person:any;
-  login(data:any){
-    // console.log(data)
-    // if(data.username == "jaynard" && data.password == "senilla"){
-    //   this.service.loggedIn = true;
-    //   this.service.footer = true;
-    //   this.router.navigate(['home'])
-    // }
-    // this.person = this.user.find((userInfo:any) => userInfo.email === data.email)
-    // console.log(this.person)
-    // if(this.person.email == data.email && this.person.password == data.password){
-    //   this.router.navigate(['home'])
-    // }else{
-    //   alert(this.user)
-    // }
+  userLogin(userInfo: any) {
+    console.log(userInfo.value);
+
+  }
+  user: any = [];
+  error = false;
+  person: any;
+  icon = true;
+  button = "Login"
+  login(data: any) {
+    this.button = "Loading...";
+    this.icon = false;
     this.service.login(data).subscribe(res => {
-      if(res[0] == "This credentials don't match!"){
-        alert("Error in Logging in!")
-      }else{
-        if(res.user.usertype == "user"){
+      if (res[0] == "This credentials don't match!") {
+        this.error = true;
+        this.button = "Login";
+        this.icon = true;
+      } else {
+        if (res.user.usertype == "user") {
+          localStorage.setItem("name", res.token)
           console.log(res.user.usertype)
           this.router.navigate(['home'])
-        }else{
+        } else {
           console.log(res.user.usertype)
           this.router.navigate(['create-stories'])
         }
       }
-      
+
     })
   }
-  
+
 
   ngOnInit(): void {
     // this.service.getUsers().subscribe(res => this.user = res)

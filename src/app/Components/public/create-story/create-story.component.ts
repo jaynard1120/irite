@@ -10,7 +10,7 @@ import { AngularEditorConfig } from '@kolkov/angular-editor';
   styleUrls: ['./create-story.component.css']
 })
 export class CreateStoryComponent implements OnInit {
-
+  files: any;
   constructor(
     private service: ApiService,
     public fb: FormBuilder,
@@ -20,6 +20,8 @@ export class CreateStoryComponent implements OnInit {
   ngOnInit(): void {
 
   }
+
+  image:any;
 
   // title:any;
   genre = { "romance": "", "fiction": "", "horror": "", "thriller": "", "scifi": "" };
@@ -44,13 +46,6 @@ export class CreateStoryComponent implements OnInit {
   })
 
   getKeys(object: any) {
-    // console.log(Object.keys(object).find(key => object[key]==true))
-    // let keys = Object.keys(object)
-    // for (let index = 0; index < keys.length; index++) {
-    //   if(object[index]==true){
-    //     this.newGenre.push(keys[index])
-    //   }
-    // }
     Object.keys(object).forEach(key => {
       if (object[key] == true) {
         this.newGenre.push(key)
@@ -58,27 +53,22 @@ export class CreateStoryComponent implements OnInit {
     })
     console.log(this.newGenre)
   }
-  imageName = "imageIcon.png"
+  // imageName = "imageIcon.png"
   publish() {
-    // let genre = [this.romance, this.fiction, this.horror, this.thriller, this.scifi]
     this.getKeys({"romance":this.book.value.romance,"fiction":this.book.value.fiction,
     "horror":this.book.value.thriller,"scifi":this.book.value.scifi,"thriller":this.book.value.thriller})
-    // console.log(this.genre)
-    // console.log({"title": this.title, "genre":this.newGenre,"blurb":this.blurb,"storyFlow":this.story});
-    // console.log(this.blurb)
-    this.service.addStory({"title": this.book.value.title, "genre":this.newGenre,"blurb":this.book.value.blurb,"storyFlow":this.book.value.story,"image":this.imageName})
+    this.service.addStory({"title": this.book.value.title, "genre":this.newGenre,"blurb":this.book.value.blurb,"storyFlow":this.book.value.story})
     .subscribe(res => console.log(res))
     console.log(this.book.value);
 
 
   }
 
-  files: any;
+
 
   handleFileInput(event: any){
     this.files = event.target.files[0];
     console.log(this.files.name)
-    this.imageName = this.files.name
   }
 
   editorConfig: AngularEditorConfig = {

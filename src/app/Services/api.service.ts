@@ -15,29 +15,25 @@ export class ApiService {
   }
 
   public login(userAccount: Login){
-    return this.httpClient.post<any>("http://127.0.0.1:8000/api/login",userAccount)
+    return this.httpClient.post<any>(this.url+"login",userAccount)
   }
 
   public addStory(story:any){
-    return this.httpClient.post<any>("http://127.0.0.1:8000/api/add_story",story)
+    return this.httpClient.post<any>(this.url+"add_story/1",story)
   }
 
   errors = []
   json:any;
   public register(userData: any){
-     return this.httpClient.post<any>("http://127.0.0.1:8000/api/register", userData)
-    //  http://127.0.0.1:8000/api/
-    //  .pipe(
-    //    catchError(this.errorHandler)
-    //  )
+     return this.httpClient.post<any>(this.url+"register", userData)
   }
 
   // .toPromise().then((data: any) => {
   // })
-  public getError():Observable<any>{
-    return this.httpClient.get(this.url)
-    .pipe(catchError(this.errorHandler))
-  }
+  // public getError():Observable<any>{
+  //   return this.httpClient.get(this.url)
+  //   .pipe(catchError(this.errorHandler))
+  // }
 
 logErrors: any;
 errorHandler(error: HttpErrorResponse){
