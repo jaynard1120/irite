@@ -207,9 +207,11 @@
                     </a>&<a class="link"> Privacy Policy</a></mdb-checkbox>
                 </div>
               </div>
-              <button mdbBtn type="submit" [disabled]="userAccount.invalid" gradient="aqua" mdbWavesEffect><i class="fa fa-user-plus"></i>
-                Register</button>
-              <p>Already have an account? <a href="login">Login</a>. </p>
+              <button mdbBtn type="submit" [disabled]="userAccount.invalid && icon" gradient="aqua" mdbWavesEffect>
+                <i [hidden]="!icon" class='fa fa-user-plus'></i>
+                <span class="spinner-border spinner-border-sm text-secondary" role="status" aria-hidden="true" [hidden]="icon"></span>
+                {{button}}</button>
+              <p>Already have an account? <a href="login"> Login</a>. </p>
             </form>
           </div>
         </div>
@@ -218,11 +220,11 @@
   </div>
 </section>
 
-
-
-<!-- [ngClass]="{'is-invalid' : addRecipe.get('category').touched && addRecipe.get('category').invalid}"
-<div *ngIf="addRecipe.get('procedures').touched && addRecipe.get('procedures').invalid" id="procedures-feedback"
-  class="invalid-feedback">
-  <p *ngIf="addRecipe.get('procedures').errors.required">This field is required</p>
-  <p *ngIf="addRecipe.get('procedures').errors.minlength">Procedure must be atleast 4 characters</p>
-</div> -->
+<!-- <button mdbBtn color="primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  <span class="sr-only">Loading...</span>
+</button>
+<button mdbBtn color="primary" type="button" disabled>
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  Loading...
+</button> -->

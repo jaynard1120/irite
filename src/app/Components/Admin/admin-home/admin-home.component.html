@@ -196,19 +196,19 @@ aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
 </div> -->
 
 
-<!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>Launch demo modal</button>
-
-<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-          <span aria-hidden="true">×</span>
-        </button>
-        <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-      </div>
-      <div class="modal-body">
-        Once Upon a Time is an American fantasy adventure drama television series that aired for seven
+<button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect> Launch demo modal</button >
+    <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+       aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                    <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Once Upon a Time is an American fantasy adventure drama television series that aired for seven
                     seasons on ABC from October 23, 2011 to May 18, 2018. The action alternates between two main
                     settings: a fantastical world where fairy tales happen; and a seaside town in Maine invented for the
                     show, called Storybrooke. The "real-world" part of the story unfolds with the characters of Emma
@@ -238,11 +238,16 @@ aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                     A spin-off series, Once Upon a Time in Wonderland, consisting of 13 episodes featuring the title
                     character of the 1865 novel Alice's Adventures in Wonderland by Lewis Carroll, premiered on October
                     10, 2013 and concluded on April 3, 2014.[5]
-      </div>
-      <div class="modal-footer">
-        <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-        <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save changes</button>
-      </div>
-    </div>
-  </div>
-</div> -->
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
+                    <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>OK!</button>
+                    <button mdbBtn color="primary" type="button" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="sr-only">Loading...</span>
+                      </button>
+                      
+                </div>
+            </div>
+        </div >
+    </div >

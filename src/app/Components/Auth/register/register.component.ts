@@ -26,12 +26,13 @@ export class RegisterComponent implements OnInit {
       password_confirmation: ['',[Validators.required,,Validators.minLength(8),Validators.maxLength(12)]]
     },{validator: this.confirmation('password','password_confirmation')})
   }
-  // register(userData:any){
-  //   console.log(userData)
-  // }
+  icon = true;
+  button = "Register"
   register(userData:any){
+    this.icon = false;
+    this.button = "Loading"
     this.service.register(userData).subscribe(res => {
-
+      this.router.navigate(['login'])
     }
     )
     // this.router.navigate(['login'])
@@ -40,10 +41,6 @@ export class RegisterComponent implements OnInit {
   }
 
   //Validation
-  // input(){
-  //   return this.userAccount.controls;
-  // }
-
   confirmation(controlName: string, matchingControlName: string){
     return (formGroup: FormGroup) => {
       const control = formGroup.controls[controlName];

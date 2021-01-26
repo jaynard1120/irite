@@ -9,42 +9,49 @@ import { HttpHeaders } from '@angular/common/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
   constructor(
     private service: ApiService,
     private router: Router
   ) { }
-  
+
   httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      Authorization: 'Bearer '+localStorage.getItem('name')
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + localStorage.getItem('name')
     })
   }
-  userLogin(userInfo:any){
+  userLogin(userInfo: any) {
     console.log(userInfo.value);
-    
+
   }
-  user:any = [];
-  person:any;
-  login(data:any){
+  user: any = [];
+  error = false;
+  person: any;
+  icon = true;
+  button = "Login"
+  login(data: any) {
+    this.button = "Loading...";
+    this.icon = false;
     this.service.login(data).subscribe(res => {
-      if(res[0] == "This credentials don't match!"){
-        alert("Error in Logging in!")
-      }else{
-        if(res.user.usertype == "user"){
-          localStorage.setItem("name",res.token)
+      if (res[0] == "This credentials don't match!") {
+        this.error = true;
+        this.button = "Login";
+        this.icon = true;
+      } else {
+        if (res.user.usertype == "user") {
+          localStorage.setItem("name", res.token)
           console.log(res.user.usertype)
-          // this.router.navigate(['home'])
-        }else{
+          this.router.navigate(['home'])
+        } else {
           console.log(res.user.usertype)
           this.router.navigate(['create-stories'])
         }
       }
-      
+
     })
   }
-  
+
 
   ngOnInit(): void {
     // this.service.getUsers().subscribe(res => this.user = res)

@@ -51,18 +51,24 @@
                     <div class="bottom-content">
                         <form #loginForm="ngForm" (ngSubmit)=login(loginForm.value) autocomplete="off">
                             <div class="md-form mt-3">
-                                <input type="text" id="email" name="email"
-                                    class="form-control" mdbInput ngModel>
+                                <input type="text" id="email" name="email" class="form-control" mdbInput ngModel>
                                 <label for="email">Email</label>
                             </div>
                             <div class="md-form mt-3">
-                                <input type="password" id="password" name="password"
-                                    class="form-control" mdbInput ngModel>
+                                <input type="password" id="password" name="password" class="form-control" mdbInput
+                                    ngModel>
                                 <label for="password">Password</label>
+                                <mdb-error class="alert-danger mt-2" [hidden]="!error" style="width: 100%;">
+                                    Account didn't exist!
+                                </mdb-error>
                             </div>
-                            <button mdbBtn type="submit" class="rounded" gradient="aqua" mdbWavesEffect><i
-                                    class="fa fa-sign-in"></i> Login</button>
-                                    <p style="color: black;font-size: small;" class="text-center mt-3">Not Registered? <a style="color: blue;cursor: pointer;"href="register" >Create Account</a> </p>
+                            <button mdbBtn type="submit" [disabled]="!icon" class="rounded" gradient="aqua" mdbWavesEffect>
+                                <i class="fa fa-sign-in" [hidden]="!icon"></i>
+                                <span class="spinner-border spinner-border-sm text-secondary" role="status"
+                                    aria-hidden="true" [hidden]="icon"></span>
+                                {{button}}</button>
+                            <p style="color: black;font-size: small;" class="text-center mt-3">Not Registered? <a
+                                    style="color: blue;cursor: pointer;" href="register">Create Account</a> </p>
                         </form>
                     </div>
                 </div>
