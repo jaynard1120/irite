@@ -1,4 +1,38 @@
-<!-- <div class="container">
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark young-passion-gradient" [containerInside]="false">
+    <mdb-navbar-brand><a class="navbar-brand" href="/home"><img class="navbar-brand" src="../assets/images/logo.png"
+          width="60" height="60" alt=""></a></mdb-navbar-brand>
+    <links>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link waves-light" [routerLink]="['/home']" routerLinkActive="router-link-active"  mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" [routerLink]="['/library']" routerLinkActive="router-link-active"  mdbWavesEffect>Library</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" [routerLink]="['/create-stories']" routerLinkActive="router-link-active"  mdbWavesEffect>Create</a>
+        </li>
+        <li class="nav-item">
+          <a style="float: left;width: 150%;" [routerLink]="['/your_published_stories']" routerLinkActive="router-link-active"  class="nav-link waves-light" mdbWavesEffect>Published Stories</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item avatar dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" style="width: 80px;" class="nav-link dropdown-toggle waves-light"
+            mdbWavesEffect>
+            <img style="width: 90%;" src="../assets/images/floyd.jpg" alt=""
+              class="img-fluid rounded-circle z-depth-0"></a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Log out</a>
+          </div>
+        </li>
+      </ul>
+    </links>
+  </mdb-navbar>
+
+
+<div class="container">
     <div class="card-columns">
         <div class="card" style="width:300px">
             <img class="card-img-top"
@@ -13,7 +47,7 @@
             </div>
         </div>
     </div>
-</div> -->
+</div>
 <br>
 <div class="container">
     <div class="card-columns">
@@ -25,178 +59,12 @@
                 <div>
                    <H3> 𝓖𝓞𝓞𝓓𝓑𝓨𝓔 𝓣𝓞 𝓨𝓞𝓤</H3>
                 </div>
-                    <button type="button" class="btn btn-info " data-toggle="modal"
-                        data-target="#exampleModalScrollable">REVIEW STORY</button>
+                    <button type="button" class="btn btn-info " (click)="basicModal.show()">REVIEW STORY</button>
                 </div>
             </div>
         </div>
     </div>
-<!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"
-    mdbWavesEffect>Launch demo modal</button> -->
 
-<!-- Review Stories using modal -->
-
-<!-- <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                Once Upon a Time is an American fantasy adventure drama television series that aired for seven
-                seasons on ABC from October 23, 2011 to May 18, 2018. The action alternates between two main
-                settings: a fantastical world where fairy tales happen; and a seaside town in Maine invented for the
-                show, called Storybrooke. The "real-world" part of the story unfolds with the characters of Emma
-                Swan (Jennifer Morrison) and her 10-year-old son, Henry Mills. Henry discovers the other people of
-                the town are fairy-tale characters; and the audience is shown the backstory of the town's people as
-                fairy-tale characters, in conjunction with their unfolding stories in the "real-world". In the
-                seventh and final season, the "real-world" portion of the story takes place in Seattle, Washington
-                (in the fictitious neighborhood of "Hyperion Heights"), with a new main narrative led by adult
-                Henry, and his wife and daughter.
-
-                Most of the show's characters are extracted from famous fairy-tales of the Brothers Grimm and Hans
-                Christian Andersen, popular Western literature, folklore, Arthurian legend, and Greek mythology, as
-                well as original Disney characters from The Walt Disney Company. The fantastical part of the story
-                begins in the world of Snow White and Prince Charming, and later encompasses the worlds of
-                Wonderland, Neverland, Oz, and Frozen's Arendelle.
-
-                Once Upon a Time was created by Lost and Tron: Legacy writers Edward Kitsis and Adam Horowitz. The
-                core themes of the show are hope and optimism. Horowitz told The Hollywood Reporter that they had a
-                conscious purpose to "do a show that had optimism at its heart", as they "felt like there was so
-                much darkness in the world". Kitsis said: "We are guys who like to see the world as half-full, not
-                half-empty", and it's about "seeing that among all the trials and tribulations of life, you can
-                persevere and find light among the darkness";[2] "it's that ability to think your life will get
-                better".[3] Star Jennifer Morrison told the Calgary Herald that it's a show about hope and
-                positivity and connectivity, which "encourages people to believe in themselves and believe in the
-                best versions of themselves and to have hope to have the life that they have."[4]
-
-                A spin-off series, Once Upon a Time in Wonderland, consisting of 13 episodes featuring the title
-                character of the 1865 novel Alice's Adventures in Wonderland by Lewis Carroll, premiered on October
-                10, 2013 and concluded on April 3, 2014.[5]
-            </div>
-            <div class="modal-footer">
-                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
-                    (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-                <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>Save
-                    changes</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-<div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
-aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
-<div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalScrollableTitle">Title Here</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            Once Upon a Time is an American fantasy adventure drama television series that aired for seven
-            seasons on ABC from October 23, 2011 to May 18, 2018. The action alternates between two main
-            settings: a fantastical world where fairy tales happen; and a seaside town in Maine invented for the
-            show, called Storybrooke. The "real-world" part of the story unfolds with the characters of Emma
-            Swan (Jennifer Morrison) and her 10-year-old son, Henry Mills. Henry discovers the other people of
-            the town are fairy-tale characters; and the audience is shown the backstory of the town's people as
-            fairy-tale characters, in conjunction with their unfolding stories in the "real-world". In the
-            seventh and final season, the "real-world" portion of the story takes place in Seattle, Washington
-            (in the fictitious neighborhood of "Hyperion Heights"), with a new main narrative led by adult
-            Henry, and his wife and daughter.
-
-            Most of the show's characters are extracted from famous fairy-tales of the Brothers Grimm and Hans
-            Christian Andersen, popular Western literature, folklore, Arthurian legend, and Greek mythology, as
-            well as original Disney characters from The Walt Disney Company. The fantastical part of the story
-            begins in the world of Snow White and Prince Charming, and later encompasses the worlds of
-            Wonderland, Neverland, Oz, and Frozen's Arendelle.
-
-            Once Upon a Time was created by Lost and Tron: Legacy writers Edward Kitsis and Adam Horowitz. The
-            core themes of the show are hope and optimism. Horowitz told The Hollywood Reporter that they had a
-            conscious purpose to "do a show that had optimism at its heart", as they "felt like there was so
-            much darkness in the world". Kitsis said: "We are guys who like to see the world as half-full, not
-            half-empty", and it's about "seeing that among all the trials and tribulations of life, you can
-            persevere and find light among the darkness";[2] "it's that ability to think your life will get
-            better".[3] Star Jennifer Morrison told the Calgary Herald that it's a show about hope and
-            positivity and connectivity, which "encourages people to believe in themselves and believe in the
-            best versions of themselves and to have hope to have the life that they have."[4]
-
-            A spin-off series, Once Upon a Time in Wonderland, consisting of 13 episodes featuring the title
-            character of the 1865 novel Alice's Adventures in Wonderland by Lewis Carroll, premiered on October
-            10, 2013 and concluded on April 3, 2014.[5]
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary mr-3 ml-3">Approve</button> <button type="button"
-                class="btn btn-danger">Decline</button>
-        </div>
-    </div>
-</div>
-</div>
-
-
-<!-- <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect>
-    Launch demo modal</button> -->
-<!-- <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
-    aria-labelledby="myBasicModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body vertical-scrollable">
-                <div class="body">
-                    Once Upon a Time is an American fantasy adventure drama television series that aired for seven
-                    seasons on ABC from October 23, 2011 to May 18, 2018. The action alternates between two main
-                    settings: a fantastical world where fairy tales happen; and a seaside town in Maine invented for the
-                    show, called Storybrooke. The "real-world" part of the story unfolds with the characters of Emma
-                    Swan (Jennifer Morrison) and her 10-year-old son, Henry Mills. Henry discovers the other people of
-                    the town are fairy-tale characters; and the audience is shown the backstory of the town's people as
-                    fairy-tale characters, in conjunction with their unfolding stories in the "real-world". In the
-                    seventh and final season, the "real-world" portion of the story takes place in Seattle, Washington
-                    (in the fictitious neighborhood of "Hyperion Heights"), with a new main narrative led by adult
-                    Henry, and his wife and daughter.
-
-                    Most of the show's characters are extracted from famous fairy-tales of the Brothers Grimm and Hans
-                    Christian Andersen, popular Western literature, folklore, Arthurian legend, and Greek mythology, as
-                    well as original Disney characters from The Walt Disney Company. The fantastical part of the story
-                    begins in the world of Snow White and Prince Charming, and later encompasses the worlds of
-                    Wonderland, Neverland, Oz, and Frozen's Arendelle.
-
-                    Once Upon a Time was created by Lost and Tron: Legacy writers Edward Kitsis and Adam Horowitz. The
-                    core themes of the show are hope and optimism. Horowitz told The Hollywood Reporter that they had a
-                    conscious purpose to "do a show that had optimism at its heart", as they "felt like there was so
-                    much darkness in the world". Kitsis said: "We are guys who like to see the world as half-full, not
-                    half-empty", and it's about "seeing that among all the trials and tribulations of life, you can
-                    persevere and find light among the darkness";[2] "it's that ability to think your life will get
-                    better".[3] Star Jennifer Morrison told the Calgary Herald that it's a show about hope and
-                    positivity and connectivity, which "encourages people to believe in themselves and believe in the
-                    best versions of themselves and to have hope to have the life that they have."[4]
-
-                    A spin-off series, Once Upon a Time in Wonderland, consisting of 13 episodes featuring the title
-                    character of the 1865 novel Alice's Adventures in Wonderland by Lewis Carroll, premiered on October
-                    10, 2013 and concluded on April 3, 2014.[5]
-                </div>
-            </div>
-            <div class="modal-footer justify-content-center">
-                <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
-                    (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-                <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>OK!</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-<button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()" mdbWavesEffect> Launch demo modal</button >
     <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
        aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
@@ -240,14 +108,16 @@ aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                     10, 2013 and concluded on April 3, 2014.[5]
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>Close</button>
-                    <button type="button" mdbBtn color="primary" class="relative waves-light" mdbWavesEffect>OK!</button>
-                    <button mdbBtn color="primary" type="button" disabled>
-                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                        <span class="sr-only">Loading...</span>
-                      </button>
+                    <button type="button" mdbBtn color="secondary" class="waves-light  rounded"  mdbWavesEffect><i class="fa fa-thumbs-up"></i> Approve</button>
+                    <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect><i class="fa fa-thumbs-down"></i> Decline</button>
+
                       
                 </div>
             </div>
         </div >
     </div >
+
+    <!-- <button mdbBtn color="primary" type="button" disabled>
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        <span class="sr-only">Loading...</span>
+      </button> -->

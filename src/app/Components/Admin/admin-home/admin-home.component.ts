@@ -13,4 +13,8 @@ export class AdminHomeComponent implements OnInit {
     
   }
 
+  logout(){
+    
+  }
+
 }

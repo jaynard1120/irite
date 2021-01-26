@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + localStorage.getItem('name')
+      Authorization: 'Bearer ' + localStorage.getItem('name'),
+      AdminAuth: 'Bearer'+localStorage.getItem("admin")
     })
   }
   userLogin(userInfo: any) {
@@ -44,8 +45,9 @@ export class LoginComponent implements OnInit {
           console.log(res.user.usertype)
           this.router.navigate(['home'])
         } else {
+          localStorage.setItem("admin", res.token)
           console.log(res.user.usertype)
-          this.router.navigate(['create-stories'])
+          this.router.navigate(['home'])
         }
       }
 
