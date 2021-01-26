@@ -43,11 +43,14 @@ export class LoginComponent implements OnInit {
         if (res.user.usertype == "user") {
           localStorage.setItem("name", res.token)
           this.service.userId = res.user.id
+          localStorage.setItem('userId',res.user.id)
           console.log(res)
           console.log(res.user.usertype)
           this.router.navigate(['home'])
         } else {
           localStorage.setItem("admin", res.token)
+          localStorage.setItem('userId',res.user.id)
+          console.log(res)
           console.log(res.user.usertype)
           this.router.navigate(['admin/dashboard'])
         }

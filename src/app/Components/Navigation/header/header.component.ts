@@ -1,5 +1,6 @@
 import { ApiService } from 'src/app/Services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor(
-    private service : ApiService
+    private service : ApiService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -18,7 +20,8 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.service.logout().subscribe(res => {
       localStorage.removeItem('name');
-      console.log(res)
+      localStorage.removeItem('userId')
+      this.router.navigate([''])
     },error=>{
       console.log(error)
     })

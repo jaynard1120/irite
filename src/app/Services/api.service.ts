@@ -9,7 +9,8 @@ export class ApiService {
     // this.httpClient.post()
   }
 
-  userId = ''
+  userId = localStorage.getItem('userId');
+  // adminId = localStorage.getItem('adminId')
 
   public getUsers():Observable<any> {
     return this.httpClient.get(this.url+"users")
