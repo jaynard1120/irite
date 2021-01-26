@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
   button = "Register"
   register(userData:any){
     this.icon = false;
-    this.button = "Loading"
+    this.button = "Signing up..."
     this.service.register(userData).subscribe(res => {
       this.router.navigate(['login'])
     }
