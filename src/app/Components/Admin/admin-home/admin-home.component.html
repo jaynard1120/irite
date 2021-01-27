@@ -1,25 +1,13 @@
-<div class="mr-2">
-    <ul class="navbar-nav ml-auto nav-flex-icons" style="float: right;">
-        <li class="nav-item avatar dropdown  bg-primary" dropdown>
-            <a dropdownToggle mdbWavesEffect type="button" style="width: 80px;"
-                class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
-                <img style="width: 90%;" src="../assets/images/floyd.jpg" alt=""
-                    class="img-fluid rounded-circle z-depth-0"></a>
-            <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
-                <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
-                <a class="dropdown-item waves-light" mdbWavesEffect (click)="logout()">Log out</a>
-            </div>
-        </li>
-    </ul>
-</div>
+<app-admin-header></app-admin-header>
 
-<div SideClass="navbar navbar-dark" class="sidenav rounded bg-info shadow-lg">
-    <mdb-navbar-brand><a class="navbar-brand ml-3" href="/admin/dashboard"><img class="navbar-brand rounded-circle" src="../assets/images/logo.png"
-        width="90%" height="90%" alt=""></a></mdb-navbar-brand>
+<!-- <div SideClass="navbar-dark" class="sidenav rounded bg-info shadow-lg">
+    <mdb-navbar-brand><a class="navbar-brand ml-3" href="/admin/dashboard"><img class="navbar-brand rounded-circle"
+                src="../assets/images/logo.png" width="90%" height="90%" alt=""></a></mdb-navbar-brand>
     <button mdbBtn class="btn btn-secondary" style="width:90%"> Dashboard</button>
-    <button mdbBtn class="btn btn-secondary mb-5" style="width:90%" [routerLink]="['/admin/stories']" routerLinkActive="router-link-active" >Stories</button>
-    
-</div>
+    <button mdbBtn class="btn btn-secondary mb-5" style="width:90%" [routerLink]="['/admin/stories']"
+        routerLinkActive="router-link-active">Stories</button>
+
+</div> -->
 
 
 <!-- <button mdbBtn color="primary" type="button" disabled>

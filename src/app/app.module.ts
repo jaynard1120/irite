@@ -21,6 +21,10 @@ import { CoverBookComponent } from './Components/public/cover-book/cover-book.co
 import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
 import { StoriesComponent } from './Components/Admin/stories/stories.component';
 import { StoryComponent } from './Components/Admin/story/story.component';
+import { DeclinedComponent } from './Components/Admin/declined/declined.component';
+import { AdminHeaderComponent } from './Components/Admin/admin-header/admin-header.component';
+import { PublishedAdminComponent } from './Components/Admin/published-admin/published-admin.component';
+import { PublishedStoryComponent } from './Components/Admin/published-story/published-story.component';
   // import { from } from 'rxjs';
 
 @NgModule({
@@ -39,7 +43,11 @@ import { StoryComponent } from './Components/Admin/story/story.component';
     CoverBookComponent,
     AdminHomeComponent,
     StoriesComponent,
-    StoryComponent
+    StoryComponent,
+    DeclinedComponent,
+    AdminHeaderComponent,
+    PublishedAdminComponent,
+    PublishedStoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,7 +56,7 @@ import { StoryComponent } from './Components/Admin/story/story.component';
     ReactiveFormsModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
-    AngularEditorModule
+    AngularEditorModule,
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [

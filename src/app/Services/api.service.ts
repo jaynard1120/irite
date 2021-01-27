@@ -32,9 +32,23 @@ export class ApiService {
   }
 
   public getStory():Observable<any>{
-    return this.httpClient.get(this.url+"get_story")
+    return this.httpClient.get(this.url+"story_to_be_publish")
+  }
+  
+  public approve(id:any){
+    return this.httpClient.post<any>(this.url+`publish/${id}`,true)
   }
 
+  public decline(story:any){
+    return this.httpClient.post<any>(this.url+`decline/${story}`,true)
+  }
+  public getPublished():Observable<any>{
+    return this.httpClient.get(this.url+"dashboard")
+  }
+
+  public getDeclined(){
+    return this.httpClient.get(this.url+"declined")
+  }
   public logout(){
     console.log(this.userId)
     return this.httpClient.post<any>(this.url+`logout/${this.userId}`,true)
