@@ -3,6 +3,7 @@ import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@an
 import { window } from 'rxjs/operators';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-story',
@@ -14,6 +15,7 @@ export class CreateStoryComponent implements OnInit {
   constructor(
     private service: ApiService,
     public fb: FormBuilder,
+    private router: Router,
     private cd: ChangeDetectorRef
   ) { }
 
@@ -58,10 +60,14 @@ export class CreateStoryComponent implements OnInit {
     this.getKeys({"romance":this.book.value.romance,"fiction":this.book.value.fiction,
     "horror":this.book.value.thriller,"scifi":this.book.value.scifi,"thriller":this.book.value.thriller})
     this.service.addStory({"title": this.book.value.title, "genre":this.newGenre,"blurb":this.book.value.blurb,"storyFlow":this.book.value.story})
-    .subscribe(res => console.log(res))
-    console.log(this.book.value);
-
-
+      .subscribe(response => {
+        this.router.navigate(["home"])
+      },error => {
+        console.log(error)
+      })
+    
+    // .subscribe(res => console.log(res))
+    // console.log(this.book.value);
   }
 
 

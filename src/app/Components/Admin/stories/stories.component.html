@@ -1,1 +1,12 @@
-<p>stories works!</p>
+<app-admin-header></app-admin-header>
+<div class="main" [hidden]="!fetched">
+    <div *ngFor="let story of stories">
+        <app-story [story]="story"></app-story>
+    </div>
+</div>
+
+<div style="margin: auto;margin-top: 7%;"  [hidden]="fetched" >
+    <div class="spinner-border text-info text-center" style="margin-left: 33%;font-size: xx-large;height: 200px;width: 200px;"role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>

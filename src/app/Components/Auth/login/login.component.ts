@@ -18,7 +18,8 @@ export class LoginComponent implements OnInit {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + localStorage.getItem('name')
+      Authorization: 'Bearer ' + localStorage.getItem('name'),
+      AdminAuth: 'Bearer'+localStorage.getItem("admin")
     })
   }
   userLogin(userInfo: any) {
@@ -31,7 +32,7 @@ export class LoginComponent implements OnInit {
   icon = true;
   button = "Login"
   login(data: any) {
-    this.button = "Loading...";
+    this.button = "Logging in...";
     this.icon = false;
     this.service.login(data).subscribe(res => {
       if (res[0] == "This credentials don't match!") {
@@ -41,11 +42,17 @@ export class LoginComponent implements OnInit {
       } else {
         if (res.user.usertype == "user") {
           localStorage.setItem("name", res.token)
+          this.service.userId = res.user.id
+          localStorage.setItem('userId',res.user.id)
+          console.log(res)
           console.log(res.user.usertype)
           this.router.navigate(['home'])
         } else {
+          localStorage.setItem("admin", res.token)
+          localStorage.setItem('userId',res.user.id)
+          console.log(res)
           console.log(res.user.usertype)
-          this.router.navigate(['create-stories'])
+          this.router.navigate(['admin/dashboard'])
         }
       }
 

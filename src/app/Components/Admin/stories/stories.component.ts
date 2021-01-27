@@ -1,4 +1,6 @@
+import { ApiService } from 'src/app/Services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-stories',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stories.component.css']
 })
 export class StoriesComponent implements OnInit {
-
-  constructor() { }
-
+  stories:any;
+  fetched = false;
+  timer = 30;
+  constructor(
+    private service: ApiService,
+    private router: Router
+  ) { }
   ngOnInit(): void {
+    this.service.getStory().subscribe(res => {
+      this.stories = res
+      this.fetched = true;
+    })
   }
 
 }

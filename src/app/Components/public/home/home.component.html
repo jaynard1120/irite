@@ -9,10 +9,12 @@
       <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>SCIENCE FICTION</a>
     </mdb-card-body>
   </mdb-card>
+<div style="height: 100vh;">
 
+</div>
 <div class="row mb-5">
-  <div class="column mt-5" *ngFor=" let image of listBooks">
-    <app-cover-book [cover]=image></app-cover-book>
+  <div class="column mt-5" *ngFor=" let story of listBooks">
+    <app-cover-book [cover]="story"></app-cover-book>
   </div>
 </div>
 

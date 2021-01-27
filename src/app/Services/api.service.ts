@@ -9,6 +9,9 @@ export class ApiService {
     // this.httpClient.post()
   }
 
+  userId = localStorage.getItem('userId');
+  // adminId = localStorage.getItem('adminId')
+
   public getUsers():Observable<any> {
     return this.httpClient.get(this.url+"users")
     .pipe(catchError(this.errorHandler))
@@ -19,7 +22,7 @@ export class ApiService {
   }
 
   public addStory(story:any){
-    return this.httpClient.post<any>(this.url+"add_story/1",story)
+    return this.httpClient.post<any>(this.url+`add_story/${this.userId}`,story)
   }
 
   errors = []
@@ -28,21 +31,31 @@ export class ApiService {
      return this.httpClient.post<any>(this.url+"register", userData)
   }
 
-  // .toPromise().then((data: any) => {
-  // })
-  // public getError():Observable<any>{
-  //   return this.httpClient.get(this.url)
-  //   .pipe(catchError(this.errorHandler))
-  // }
+  public getStory():Observable<any>{
+    return this.httpClient.get(this.url+"story_to_be_publish")
+  }
+  
+  public approve(id:any){
+    return this.httpClient.post<any>(this.url+`publish/${id}`,true)
+  }
+
+  public decline(story:any){
+    return this.httpClient.post<any>(this.url+`decline/${story}`,true)
+  }
+  public getPublished():Observable<any>{
+    return this.httpClient.get(this.url+"dashboard")
+  }
+
+  public getDeclined(){
+    return this.httpClient.get(this.url+"declined")
+  }
+  public logout(){
+    console.log(this.userId)
+    return this.httpClient.post<any>(this.url+`logout/${this.userId}`,true)
+  }
 
 logErrors: any;
 errorHandler(error: HttpErrorResponse){
-  // if (error.error instanceof ErrorEvent) {
-  //   console.error('An error occurred:', error.error.message);
-  // } else {
-  //   console.error(error.error.message);
-  //   console.error(error.error.errors);
-  // }
   this.logErrors = error.error.errors
   return error.error.errors
 }

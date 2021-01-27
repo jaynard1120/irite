@@ -11,8 +11,13 @@ export class HomeComponent implements OnInit {
   constructor(
     private service: ApiService
   ) { }
-
+listBooks:any
   ngOnInit(): void {
+    this.service.getPublished().subscribe(res => {
+      this.listBooks = res
+    },error => {
+      console.log(error)
+    })
   }
-  listBooks = this.service.listBooks
+  // listBooks = this.service.listBooks
 }

@@ -3,28 +3,26 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  selector: 'app-admin-header',
+  templateUrl: './admin-header.component.html',
+  styleUrls: ['./admin-header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class AdminHeaderComponent implements OnInit {
 
   constructor(
     private service : ApiService,
-    private router: Router
+    private router : Router
   ) { }
 
   ngOnInit(): void {
   }
-
   logout(){
     this.service.logout().subscribe(res => {
-      localStorage.removeItem('name');
+      localStorage.removeItem('admin');
+      this.router.navigate(['login'])
       localStorage.removeItem('userId')
-      this.router.navigate([''])
     },error=>{
       console.log(error)
     })
   }
-
 }
