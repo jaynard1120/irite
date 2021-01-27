@@ -42,9 +42,9 @@
                     {{story.story_flow}}
                 </div>
                 <div class="modal-footer justify-content-center">
-                    <button type="button" mdbBtn color="secondary" class="waves-light  rounded" mdbWavesEffect><i
+                    <button type="button" mdbBtn color="secondary" class="waves-light  rounded" mdbWavesEffect (click)="approve()"><i
                             class="fa fa-thumbs-up"></i> Approve</button>
-                    <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect><i
+                    <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect (click)="decline()"><i
                             class="fa fa-thumbs-down"></i> Decline</button>
                 </div>
             </div>

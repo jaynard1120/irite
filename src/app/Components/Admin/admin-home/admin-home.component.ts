@@ -18,14 +18,6 @@ export class AdminHomeComponent implements OnInit {
     
   }
 
-  logout(){
-    this.service.logout().subscribe(res => {
-      localStorage.removeItem('admin');
-      this.router.navigate(['login'])
-      localStorage.removeItem('userId')
-    },error=>{
-      console.log(error)
-    })
-  }
+
 
 }

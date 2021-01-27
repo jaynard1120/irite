@@ -1,3 +1,5 @@
+import { PublishedAdminComponent } from './Components/Admin/published-admin/published-admin.component';
+import { DeclinedComponent } from './Components/Admin/declined/declined.component';
 import { StoriesComponent } from './Components/Admin/stories/stories.component';
 import { RouteguardGuard } from './routeguard.guard';
 import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: "register", component: RegisterComponent, pathMatch: "full"},
   {path: "admin/dashboard", component: AdminHomeComponent, pathMatch: "full" ,canActivate:[AdminGuard]},
   {path: "admin/stories", component: StoriesComponent, pathMatch: "full" ,canActivate:[AdminGuard]},
+  {path: "admin/published", component: PublishedAdminComponent, pathMatch: "full" ,canActivate:[AdminGuard]},
+  {path: "admin/declined", component: DeclinedComponent, pathMatch: "full" ,canActivate:[AdminGuard]},
   {path: "home", component: HomeComponent, pathMatch:"full" , canActivate:[RouteguardGuard]},
   {path: "create-stories", component: CreateStoryComponent, pathMatch:"full", canActivate:[RouteguardGuard]},
   {path: "your_published_stories", component: PublishedComponent, pathMatch:"full",  canActivate:[RouteguardGuard]},
