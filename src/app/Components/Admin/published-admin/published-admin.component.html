@@ -1,11 +1,13 @@
 <app-admin-header></app-admin-header>
 
+<h4 class="mt-2 ml-5 font-weight-bold">Published Stories</h4>
+
 <div>
     <app-published-story [story]="published"></app-published-story>
 </div>
 
-<div style="margin: auto;margin-top: 3%;"  [hidden]="fetched" >
-    <div class="spinner-border text-info text-center" style="margin-left: 33%;font-size: xx-large;height: 400px;width: 400px;"role="status">
+<div style="margin:3% 45%;"  [hidden]="fetched" >
+    <div class="spinner-border text-secondary text-center" style="font-size: xx-large;height: 200px;width: 200px;"role="status">
         <span class="sr-only">Loading...</span>
     </div>
 </div>

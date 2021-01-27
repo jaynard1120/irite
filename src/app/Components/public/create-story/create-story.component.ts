@@ -1,7 +1,7 @@
 import { ApiService } from 'src/app/Services/api.service';
 import { Component, OnInit, ViewChild, ElementRef, ChangeDetectorRef } from '@angular/core';
 import { window } from 'rxjs/operators';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 import { Router } from '@angular/router';
 
@@ -24,27 +24,18 @@ export class CreateStoryComponent implements OnInit {
   }
 
   image:any;
-
-  // title:any;
   genre = { "romance": "", "fiction": "", "horror": "", "thriller": "", "scifi": "" };
-  // romance:any;
-  // fiction:any;
-  // horror:any;
-  // thriller:any;
-  // scifi:any;
   newGenre: any = [];
-  // blurb:any;
-  // story:any;
 
   book = new FormGroup({
-    title: new FormControl(''),
+    title: new FormControl('',Validators.required),
     romance: new FormControl(''),
     fiction: new FormControl(''),
     horror: new FormControl(''),
     thriller: new FormControl(''),
     scifi: new FormControl(''),
-    blurb: new FormControl(''),
-    story: new FormControl('')
+    blurb: new FormControl('',Validators.required),
+    story: new FormControl('',Validators.required)
   })
 
   getKeys(object: any) {
@@ -56,18 +47,22 @@ export class CreateStoryComponent implements OnInit {
     console.log(this.newGenre)
   }
   // imageName = "imageIcon.png"
+  icon:Boolean = true
+  button = "PUBLISH"
   publish() {
+    this.icon = false;
+    this.button = "PUBLISHING..."
     this.getKeys({"romance":this.book.value.romance,"fiction":this.book.value.fiction,
     "horror":this.book.value.thriller,"scifi":this.book.value.scifi,"thriller":this.book.value.thriller})
     this.service.addStory({"title": this.book.value.title, "genre":this.newGenre,"blurb":this.book.value.blurb,"storyFlow":this.book.value.story})
       .subscribe(response => {
+        this.book.reset()
         this.router.navigate(["home"])
       },error => {
+        this.book.reset()
         console.log(error)
+        this.router.navigate(["home"])
       })
-    
-    // .subscribe(res => console.log(res))
-    // console.log(this.book.value);
   }
 
 
@@ -81,8 +76,8 @@ export class CreateStoryComponent implements OnInit {
     editable: true,
       spellcheck: true,
       height: 'auto',
-      minHeight: '0',
-      maxHeight: 'auto',
+      minHeight: '40',
+      maxHeight: '50',
       width: 'auto',
       minWidth: '0',
       translate: 'yes',

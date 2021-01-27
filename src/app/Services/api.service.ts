@@ -23,6 +23,7 @@ export class ApiService {
 
   public addStory(story:any){
     return this.httpClient.post<any>(this.url+`add_story/${this.userId}`,story)
+    .pipe(catchError(this.errorHandler))
   }
 
   errors = []
