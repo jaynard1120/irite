@@ -9,8 +9,13 @@
       <a mdbBtn gradient="purple" class="waves-light" mdbWavesEffect>SCIENCE FICTION</a>
     </mdb-card-body>
   </mdb-card>
-<div style="height: 100vh;">
+<!-- <div style="height: 100vh;">
 
+</div> -->
+<div style="margin:5% 45%;height: 50vh;" [hidden]="fetched" >
+  <div class="spinner-border text-secondary text-center" style="font-size: xx-large;height: 200px;width: 200px;"role="status">
+      <span class="sr-only">Loading...</span>
+  </div>
 </div>
 <div class="row mb-5">
   <div class="column mt-5" *ngFor=" let story of listBooks">

@@ -11,11 +11,13 @@ export class HomeComponent implements OnInit {
   constructor(
     private service: ApiService
   ) { }
-listBooks:any
+  fetched = false;
+  listBooks: any
   ngOnInit(): void {
     this.service.getPublished().subscribe(res => {
-      this.listBooks = res
-    },error => {
+      this.listBooks = res;
+      this.fetched = true;
+    }, error => {
       console.log(error)
     })
   }
