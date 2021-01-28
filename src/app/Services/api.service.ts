@@ -61,12 +61,20 @@ export class ApiService {
     return this.httpClient.get(this.url+`published_story/${user}`)
   }
 
-  public deleteStory(user_id:any){
-    return this.httpClient.delete(this.url+`delete_published/${user_id}`)
+  public deleteStory(id:any){
+    return this.httpClient.delete<any>(this.url+`delete_published/${id}`)
+  }
+
+  public deleteLibrary(id:any){
+    return this.httpClient.delete<any>(this.url+`delete_from_library/${id}`)
   }
 
   public addToLibrary(publishedStory:any){
     return this.httpClient.post<any>(this.url+`add_to_library/${publishedStory}/${this.userId}`,true)
+  }
+
+  public getLibrary():Observable<any>{
+    return this.httpClient.get<any>(this.url+`library/${this.userId}`)
   }
 
   public searchGenre(genre:any):Observable<any>{

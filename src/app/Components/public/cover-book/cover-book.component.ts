@@ -1,5 +1,6 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../../../Services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cover-book',
@@ -9,19 +10,25 @@ import { ApiService } from '../../../Services/api.service';
 export class CoverBookComponent implements OnInit {
 
   constructor(
-    private service: ApiService
+    private service: ApiService,
+    private router: Router
   ) { }
 
-  @Input() cover:any;
-
+  @Input() cover: any;
+  icon: Boolean = true
   ngOnInit(): void {
     console.log(this.cover)
   }
-
-  addToLibrary(){
+  button: String = "Add to Library"
+  addToLibrary() {
+    this.icon = false
+    this.button = "Adding ..."
     this.service.addToLibrary(this.cover.id).subscribe(res => {
       console.log(res)
-    },error => {
+      this.icon = true
+      this.button = "Added to Library"
+      this.router.navigate(['library'])
+    }, error => {
       console.log(error)
     })
   }

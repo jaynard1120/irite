@@ -7,7 +7,9 @@
     <!-- <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect>View <i
         class="fa fa-angle-double-right"></i></a> -->
     <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect
-    (click)="addToLibrary()"> <i class="fa fa-plus">
-        Add to Library</i></a>
+    (click)="addToLibrary()"> <i class="fa fa-plus" [hidden]="!icon"></i>
+    <span class="spinner-border spinner-border-sm text-secondary" role="status"
+        aria-hidden="true" [hidden]="icon"></span>
+        {{button}}</a>
   </div>
 </div>

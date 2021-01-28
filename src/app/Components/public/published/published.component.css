@@ -1,12 +1,13 @@
   * {
     box-sizing: border-box;
   }
-  
+
   .grid-container {
+    justify-content: center;
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 5px;
-    padding: 10px;
+    padding: 2px;
   }
   
   .grid-container > div {
