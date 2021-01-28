@@ -21,10 +21,12 @@ export class IndexComponent implements OnInit {
     // this.service.getUsers(this.url).subscribe(res => this.users = res)
   }
   searchTitle:any
+  titles: any
   search(){
     console.log(this.searchTitle)
     this.service.search(this.searchTitle).subscribe(res => {
       console.log(res)
+      this.titles = res
     },error => {
       console.log(error)
     })

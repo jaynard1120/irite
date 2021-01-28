@@ -11,11 +11,20 @@
           <a class="nav-link waves-light" href="#about" mdbWavesEffect><b>ABOUT</b></a>
         </li>
         <li class="nav-item">
-          <form class="form-inline waves-light" mdbWavesEffect>
+          <form class="form-inline waves-light" mdbWavesEffect autocomplete="off">
             <div class="md-form my-0">
               <input class="form-control mr-sm-2 ml-4 mb-3" type="text" name="title" [(ngModel)]="searchTitle"
                 placeholder="Search title here .." (keydown.enter)="search()">
             </div>
+            <!-- <table>
+              <tr *ngFor="let title of titles">
+                <td>{{title.title}}</td>
+              </tr>
+            </table> -->
+            <!-- <div role="menu" >
+                <a class="waves-light" style="color:white;" mdbWavesEffect>cdcd</a>
+                <a class="waves-light" style="color:white;" mdbWavesEffect>cdcd</a>
+              </div> -->
           </form>
         </li>
       </ul>
@@ -30,6 +39,14 @@
     </links>
   </mdb-navbar>
 </div>
+
+<div class="container" *ngFor="let title of titles">
+      <div class="w-100 d-none d-md-block"></div>
+      <div class="col-6 col-sm-4">
+        {{title.title}}
+      </div>
+ </div>
+
 <!-- stories -->
 <div class="stories">
   <div class="images">
@@ -230,20 +247,24 @@
                         <div class="container mt-5" style="width: 500px">
                           <div class="row">
                             <div class="col text-center">
-                                <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar2.png" class="img-fluid rounded-circle  " alt="Avatar">
+                              <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar2.png" class="img-fluid rounded-circle  "
+                                alt="Avatar">
                               Jonalyn Mobilla
-                              </div>
+                            </div>
                             <div class="col text-center">
-                                <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar.png" class="img-fluid rounded-circle" alt="Avatar">
+                              <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar.png" class="img-fluid rounded-circle"
+                                alt="Avatar">
                               Sarah Mae Bautista
-                              </div>
+                            </div>
                             <div class="col text-center">
-                                <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar2.png"  class="img-fluid rounded-circle  "alt="Avatar">
+                              <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar2.png" class="img-fluid rounded-circle  "
+                                alt="Avatar">
                               Jaynard Senilla
-                              </div>
+                            </div>
                             <div class="col text-center">
-                              <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar.png" class="img-fluid rounded-circle" alt="Avatar">
-                            Floyd Villamor
+                              <img style="width:100px" src="https://www.w3schools.com/howto/img_avatar.png" class="img-fluid rounded-circle"
+                                alt="Avatar">
+                              Floyd Villamor
                             </div>
                           </div>
                         </div>

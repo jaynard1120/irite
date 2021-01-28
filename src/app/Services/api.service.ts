@@ -61,6 +61,10 @@ export class ApiService {
     return this.httpClient.get(this.url+`published_story/${user}`)
   }
 
+  public deleteStory(user_id:any){
+    return this.httpClient.delete(this.url+`delete_published/${user_id}`)
+  }
+
   public addToLibrary(publishedStory:any){
     return this.httpClient.post<any>(this.url+`add_to_library/${publishedStory}/${this.userId}`,true)
   }

@@ -60,9 +60,16 @@ export class LoginComponent implements OnInit {
     })
   }
 
-
+adminToken = localStorage.getItem("admin")
+userToken = localStorage.getItem("name")
   ngOnInit(): void {
-    // this.service.getUsers().subscribe(res => this.user = res)
+    console.log(this.adminToken)
+    if(this.adminToken != null){
+      this.router.navigate(['admin/dashboard'])
+    }
+    if(this.userToken != null){
+      this.router.navigate(['home'])
+    }
   }
 
 }
