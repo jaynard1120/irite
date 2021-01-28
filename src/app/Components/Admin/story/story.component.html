@@ -43,9 +43,10 @@
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" mdbBtn color="secondary" class="waves-light  rounded" mdbWavesEffect (click)="approve()"><i
-                            class="fa fa-thumbs-up"></i> Approve</button>
+                            class="fa fa-thumbs-up" [hidden]="!icon"></i> <span class="spinner-border spinner-border-sm text-info" role="status" aria-hidden="true"
+                            [hidden]="icon"></span> {{approveBtn}}</button>
                     <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect (click)="decline()"><i
-                            class="fa fa-thumbs-down"></i> Decline</button>
+                            class="fa fa-thumbs-down"></i> {{declineBtn}}</button>
                 </div>
             </div>
         </div>

@@ -1,3 +1,7 @@
 /* .nav-item a{
     color: black;
 } */
+
+::placeholder{
+    color: white;
+}

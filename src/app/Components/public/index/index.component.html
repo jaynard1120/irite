@@ -13,8 +13,8 @@
         <li class="nav-item">
           <form class="form-inline waves-light" mdbWavesEffect>
             <div class="md-form my-0">
-              <input class="form-control mr-sm-2 ml-4 mb-3" type="text" placeholder="Search title here .."
-                (keydown.enter)="search($event)">
+              <input class="form-control mr-sm-2 ml-4 mb-3" type="text" name="title" [(ngModel)]="searchTitle" placeholder="Search title here .."
+                (keydown.enter)="search()">
             </div>
           </form>
         </li>
@@ -36,8 +36,8 @@
 <div class="stories">
   <div class="images">
     <img src="../../../../assets/images/fiction1.jpg" alt="">
-    <img src="../../../../assets/images/image4.jpg" alt="">
-    <img src="../../../../assets/images/image3.jpg" alt="">
+    <img src="../../../../assets/images/heart.jpg" alt="">
+    <img src="../../../../assets/images/Protector.jpg" alt="">
     <img src="../../../../assets/images/image2.jpg" alt="">
   </div>
   <div class="images">

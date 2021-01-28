@@ -30,9 +30,11 @@
                                 </mdb-error>
                             </div>
                             <button mdbBtn type="submit" [disabled]="!icon" class="rounded" gradient="aqua" mdbWavesEffect>
+
                                 <i class="fa fa-sign-in" [hidden]="!icon"></i>
                                 <span class="spinner-border spinner-border-sm text-secondary" role="status"
                                     aria-hidden="true" [hidden]="icon"></span>
+                                    
                                 {{button}}</button>
                             <p style="color: black;font-size: small;" class="text-center mt-3">Not Registered? <a
                                     style="color: blue;cursor: pointer;" href="register">Create Account</a> </p>

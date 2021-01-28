@@ -75,7 +75,7 @@ export class CreateStoryComponent implements OnInit {
   editorConfig: AngularEditorConfig = {
     editable: true,
       spellcheck: true,
-      height: 'auto',
+      // height: 'auto',
       minHeight: '40',
       maxHeight: '50',
       width: 'auto',

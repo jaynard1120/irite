@@ -2,14 +2,12 @@
     box-sizing: border-box;
   }
   
-  /* The grid: Four equal columns that floats next to each other */
   .column {
     float: left;
     width: 20%;
     padding: 10px;
   }
   
-  /* Style the images inside the grid */
   .column img {
     opacity: 0.8; 
     cursor: pointer; 
@@ -19,20 +17,17 @@
     opacity: 1;
   }
   
-  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;
     clear: both;
   }
   
-  /* The expanding image container */
   .container {
     position: relative;
     display: none;
   }
   
-  /* Expanding image text */
   #imgtext {
     position: absolute;
     bottom: 15px;
@@ -43,7 +38,6 @@
   .row{
     margin: auto;
   }
-  /* Closable button inside the expanded image */
   .closebtn {
     position: absolute;
     top: 10px;

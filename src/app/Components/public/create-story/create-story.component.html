@@ -53,8 +53,9 @@
                             Fiction</mdb-checkbox>
                     </div> <span>Write short description here:</span>
                     <div class="md-form">
-                        <angular-editor placeholder="Short Description" class="text-area"
-                        formControlName="blurb" [config]="editorConfig"></angular-editor>
+                        <textarea name="blurb" placeholder="Enter your short description here!" style="max-height:100px;min-height:50px" formControlName="blurb" cols="100" rows="3"></textarea>
+                        <!-- <angular-editor placeholder="Short Description" class="text-area"
+                        formControlName="blurb" [config]="editorConfig"></angular-editor> -->
                         <!-- <div *ngIf="book.get('blurb').touched && book.get('blurb').invalid" id="procedures-feedback"
                             class="invalid-feedback">
                             <mdb-error class="alert-danger mt-1" *ngIf="book.get('blurb').errors.required"
@@ -66,7 +67,7 @@
                     </div>
                     <span>Write your story here:</span>
                     <div class="md-form">
-                        <angular-editor placeholder="Story Flow" formControlName="story" class="text-area"
+                        <angular-editor placeholder="Story Flow" formControlName="story" style="max-height:100px;min-height:50px"
                         [config]="editorConfig"></angular-editor>
                         <!-- <div *ngIf="book.get('story').touched && book.get('story').invalid" id="procedures-feedback"
                             class="invalid-feedback">

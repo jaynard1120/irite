@@ -1,4 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
+import { ApiService } from '../../../Services/api.service';
 
 @Component({
   selector: 'app-cover-book',
@@ -7,11 +8,20 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 export class CoverBookComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private service: ApiService
+  ) { }
 
   @Input() cover:any;
 
   ngOnInit(): void {
   }
 
+  addToLibrary(){
+    this.service.addToLibrary(this.cover.id).subscribe(res => {
+      console.log(res)
+    },error => {
+      console.log(error)
+    })
+  }
 }
