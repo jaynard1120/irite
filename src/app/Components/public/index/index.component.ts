@@ -20,6 +20,8 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     // this.service.getUsers(this.url).subscribe(res => this.users = res)
   }
+  // data:any = ["../../../../assets/images/fiction1.jpg","../../../../assets/images/heart.jpg","../../../../assets/images/Protector.jpg"
+// ]
   searchTitle:any
   titles: any
   search(){
