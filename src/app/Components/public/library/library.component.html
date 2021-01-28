@@ -15,17 +15,11 @@
     </div>
 </div>
 
-<!-- <div class="row"  [hidden]="!fetched">
-    <div class="column bg-primary" *ngFor="let story of stories">
+<div class="grid-container mt-3 mb-3" [hidden]="!fetched">
+    <div *ngFor="let story of stories">
         <app-library-story [story]="story"> </app-library-story>
     </div>
-</div> -->
-
-<div class="grid-container" [hidden]="!fetched">
-        <div *ngFor="let story of stories">
-                <app-library-story [story]="story"> </app-library-story>
-        </div>
-    </div>
+</div>
 
 <!-- <div class="column">
         <img src="../../../../assets/images/stranger.jpg" alt="Forest" style="width:60%">

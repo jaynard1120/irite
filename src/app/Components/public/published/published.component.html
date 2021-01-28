@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<div class="grid-container" [hidden]="!fetched">
+<div class="grid-container mt-3 mb-3" [hidden]="!fetched">
     <div *ngFor="let story of stories">
         <app-your-story [story]="story"></app-your-story>
     </div>
