@@ -1,15 +1,56 @@
-.column {
-  margin: auto;
+  * {
+    box-sizing: border-box;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    text-align: center;
+  }
+
+  .column {
     width: 30%;
     padding: 0 10px;
-    justify-content: space-evenly;
+    margin: auto;
+    height: 80%;
   }
-.your-list{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-.row{
-  width: 90%;
-  margin: auto;
-}
+  .category{
+    font-size: xx-large;
+    }
+    .row{
+      width: 90%;
+      margin: auto;
+    }
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .category{
+        font-size: medium;
+    }
+    .card-body a{
+        font-size: xx-small;
+        width: fit-content;
+    }
+  }
+
+   @media screen and (max-width: 800px) {
+    .column {
+        width: 30%;
+      }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .column {
+        width: 50%;
+      }
+  }  

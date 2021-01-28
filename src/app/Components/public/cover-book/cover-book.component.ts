@@ -15,6 +15,7 @@ export class CoverBookComponent implements OnInit {
   @Input() cover:any;
 
   ngOnInit(): void {
+    console.log(this.cover)
   }
 
   addToLibrary(){

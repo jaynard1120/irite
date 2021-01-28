@@ -17,8 +17,8 @@
       <span class="sr-only">Loading...</span>
   </div>
 </div>
-<div class="row mb-5">
-  <div class="column mt-5" *ngFor=" let story of listBooks">
+<div class="grid-container">
+  <div *ngFor=" let story of listBooks">
     <app-cover-book [cover]="story"></app-cover-book>
   </div>
 </div>

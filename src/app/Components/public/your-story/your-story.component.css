@@ -1,0 +1,60 @@
+/* .column {
+    margin: auto;
+      width: 30%;
+      padding: 0 10px;
+      justify-content: space-evenly;
+    }
+  .your-list{
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+  }
+  .row{
+    width: 90%;
+    margin: auto;
+  } */
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  .column {
+    width: 30%;
+    padding: 0 10px;
+    margin: auto;
+    height: 80%;
+    /* box-shadow: 2px grey; */
+  }
+  .category{
+    font-size: xx-large;
+    }
+    .row{
+      width: 90%;
+      margin: auto;
+    }
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    .category{
+        font-size: medium;
+    }
+    .card-body a{
+        font-size: xx-small;
+        width: fit-content;
+    }
+  }
+
+   @media screen and (max-width: 800px) {
+    .column {
+        width: 30%;
+      }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .column {
+        width: 50%;
+      }
+  }  

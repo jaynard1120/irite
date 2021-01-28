@@ -80,12 +80,17 @@
                         [ngClass]="{'is-invalid' : book.get('story').touched && book.get('story').invalid}"
                         </div> -->
                     </div>
-                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right"
-                        mdbWavesEffect>Save as draft</button>
-                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right"
+                    <!-- <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right"
+                        mdbWavesEffect>Save as draft</button> -->
+                        <div id="show">
+
+                        </div>
+                        <button class="btn btn-primary" (click)="display()">Display</button>
+
+                    <!-- <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right"
                     [disabled]="book.invalid && icon" (click)="publish()" mdbWavesEffect>
                         <span class="spinner-border spinner-border-sm text-secondary" role="status" aria-hidden="true"
-                            [hidden]="icon"></span>{{button}}</button>
+                            [hidden]="icon"></span>{{button}}</button> -->
                 </form>
             </mdb-card-body>
 

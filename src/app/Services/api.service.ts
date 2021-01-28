@@ -58,11 +58,11 @@ export class ApiService {
   }
 
   public yourStory(user: any):Observable<any>{
-    return this.httpClient.get(this.url+`published_stry/${user}`)
+    return this.httpClient.get(this.url+`published_story/${user}`)
   }
 
   public addToLibrary(publishedStory:any){
-    return this.httpClient.post<any>(this.url+`add_to_library/${publishedStory}`,true)
+    return this.httpClient.post<any>(this.url+`add_to_library/${publishedStory}/${this.userId}`,true)
   }
 
   public searchGenre(genre:any):Observable<any>{

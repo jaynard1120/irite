@@ -23,13 +23,13 @@
         </a>
         <div class="text-center">
             <div class="desc mt-3">{{story.title}}</div>
-            <button mdbBtn type="button" color="purple" class="btn review mt-2" (click)="basicModal.show()" mdbWavesEffect><i
-                    class="fa fa-eye"></i> REVIEW STORY</button>
+            <button mdbBtn type="button" color="purple" class="btn review mt-2" (click)="basicModal.show()"
+                mdbWavesEffect><i class="fa fa-eye"></i> REVIEW STORY</button>
         </div>
     </div>
 
-    <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
-        aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -37,18 +37,23 @@
                         <span aria-hidden="true">×</span>
                     </button>
                     <h4 class="modal-title w-100" id="myModalLabel">{{story.title}}</h4>
+
                 </div>
                 <div class="modal-body body">
                     {{story.story_flow}}
                 </div>
                 <div class="modal-footer justify-content-center">
                     <button type="button" mdbBtn color="secondary" class="waves-light  rounded" mdbWavesEffect (click)="approve()"><i
-                            class="fa fa-thumbs-up" [hidden]="!icon"></i> <span class="spinner-border spinner-border-sm text-info" role="status" aria-hidden="true"
-                            [hidden]="icon"></span> {{approveBtn}}</button>
-                    <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect (click)="decline()"><i
-                            class="fa fa-thumbs-down"></i> {{declineBtn}}</button>
+                            class="fa fa-thumbs-up" [hidden]="!icon"></i> <span class="spinner-border spinner-border-sm text-info"
+                            role="status" aria-hidden="true" [hidden]="icon"></span> {{approveBtn}}</button>
+                    <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect
+                        (click)="decline()"><i class="fa fa-thumbs-down"></i> {{declineBtn}}</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- <div id="body">
+
+    </div> -->

@@ -11,8 +11,12 @@ export class PublishedComponent implements OnInit {
   constructor(
     private service: ApiService
   ) { }
-
+stories: any;
   ngOnInit(): void {
+    this.service.yourStory(this.service.userId).subscribe(res => {
+      console.log(res)
+      this.stories = res
+    })
   }
   listBooks = this.service.listBooks
 }

@@ -15,6 +15,7 @@ export class StoryComponent implements OnInit {
   ) { }
 @Input() story:any;
   ngOnInit(): void {
+    (<HTMLInputElement>document.getElementById('body')).innerHTML = this.story.story_flow
   }
 icon:Boolean = true;
 declineIcon = true

@@ -17,8 +17,8 @@ export class HomeComponent implements OnInit {
     this.service.getPublished().subscribe(res => {
       this.service.listTitle = res;
       this.fetched = true;
-      console.log(this.listBooks)
-      this.listBooks = this.service.getList()
+      this.listBooks = this.service.getList();
+      // console.log(this.listBooks)
     }, error => {
       console.log(error)
     })

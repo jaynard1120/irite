@@ -6,7 +6,7 @@
     </div>
 </div>
 
-<div class="row mb-5">
+<!-- <div class="row mb-5">
     <div class="column mt-4" *ngFor=" let image of listBooks">
         <mdb-card class="your-list" style="background-image: url('{{image.image}}');">
             <mdb-card-body class="text-center">
@@ -18,6 +18,14 @@
             </mdb-card-body>
         </mdb-card>
     </div>
+</div> -->
+
+<div class="grid-container">
+    <div *ngFor="let story of stories">
+        <app-your-story [story]="story"></app-your-story>
+    </div>
 </div>
+
+
 
 <app-footer></app-footer>
