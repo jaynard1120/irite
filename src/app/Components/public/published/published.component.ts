@@ -8,6 +8,7 @@ import { ApiService } from 'src/app/Services/api.service';
 })
 export class PublishedComponent implements OnInit {
 
+  fetched = false;
   constructor(
     private service: ApiService
   ) { }
@@ -15,6 +16,7 @@ stories: any;
   ngOnInit(): void {
     this.service.yourStory(this.service.userId).subscribe(res => {
       console.log(res)
+      this.fetched = true;
       this.stories = res
     })
   }

@@ -4,8 +4,6 @@ import { StoriesComponent } from './Components/Admin/stories/stories.component';
 import { RouteguardGuard } from './routeguard.guard';
 import { AdminHomeComponent } from './Components/Admin/admin-home/admin-home.component';
 import { LibraryComponent } from './Components/public/library/library.component';
-import { AppComponent } from './app.component';
-import { AdminLoginComponent } from './Components/Auth/admin-login/admin-login.component';
 import { HomeComponent } from './Components/public/home/home.component';
 import { IndexComponent } from './Components/public/index/index.component';
 import { RegisterComponent } from './Components/Auth/register/register.component';

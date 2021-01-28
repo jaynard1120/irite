@@ -1,26 +1,17 @@
 <app-header></app-header>
-
 <div class="card mt-3 text-center cloudy-knoxville-gradient">
     <div class="card-body">
         MY STORIES
     </div>
 </div>
 
-<!-- <div class="row mb-5">
-    <div class="column mt-4" *ngFor=" let image of listBooks">
-        <mdb-card class="your-list" style="background-image: url('{{image.image}}');">
-            <mdb-card-body class="text-center">
-                <p style="font-weight: bold;font-size: x-large;" class="card-title cloudy-knoxville-gradient rounded">{{image.title}}</p>
-                <button style="margin-top: 100%;color: black; font-size: large;" mdbBtn gradient="aqua"
-                    class="waves-light rounded-circle" mdbWavesEffect><i class="fa fa-eye"></i></button>
-                <button style="margin-top: 100%;color: black;font-size: large;" mdbBtn gradient="peach"
-                    class="waves-light rounded-circle" mdbWavesEffect><i class="fa fa-remove"></i></button>
-            </mdb-card-body>
-        </mdb-card>
+<div style="margin:5% 45%;height: 50vh;" [hidden]="fetched">
+    <div class="spinner-border text-secondary text-center" style="font-size: xx-large;height: 200px;width: 200px;" role="status">
+        <span class="sr-only">Loading...</span>
     </div>
-</div> -->
+</div>
 
-<div class="grid-container">
+<div class="grid-container" [hidden]="!fetched">
     <div *ngFor="let story of stories">
         <app-your-story [story]="story"></app-your-story>
     </div>

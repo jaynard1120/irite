@@ -38,8 +38,9 @@ export class CreateStoryComponent implements OnInit {
     story: new FormControl('',Validators.required)
   })
 
+  input = (<HTMLInputElement>document.getElementById('show')).innerHTML = this.book.value.story
 display(){
-  (<HTMLInputElement>document.getElementById('show')).innerHTML = this.book.value.story
+  
 }
 
   getKeys(object: any) {

@@ -1,21 +1,9 @@
-<!-- <mdb-card class="your-list" style="background-image: url('../../../../assets/images/heart.jpg');">
-    <mdb-card-body class="text-center">
-        <p style="font-weight: bold;font-size: x-large;" class="card-title cloudy-knoxville-gradient rounded">This is Title</p>
-        <button style="margin-top: 100%;color: black; font-size: large;" mdbBtn gradient="aqua" class="waves-light rounded-circle"
-            mdbWavesEffect><i class="fa fa-eye"></i></button>
-        <button style="margin-top: 100%;color: black;font-size: large;" mdbBtn gradient="peach" class="waves-light rounded-circle"
-            mdbWavesEffect><i class="fa fa-remove"></i></button>
-    </mdb-card-body>
-</mdb-card> -->
-
 <div class="card shadow-lg">
     <img class="card-img-top" height="350px" src="../../../../assets/images/floyd.jpg" alt="Card image cap">
     <div class="card-body text-center">
         <p class="card-title">{{story.title}}</p>
         <hr>
         <p class="card-title">{{story.blurb}}</p>
-        <!-- <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect>View <i
-              class="fa fa-angle-double-right"></i></a> -->
         <a mdbBtn style="font-size: x-small;" class="waves-light success-color" mdbWavesEffect (click)="basicModal.show()">
             <i class="fa fa-eye">
                 View</i></a>
@@ -35,7 +23,7 @@
                 </button>
                 <h4 class="modal-title" style="font-size:large;float:right" id="myModalLabel">{{story.title}}</h4>
             </div>
-            <div class="modal-body body" style="font-size:large;color: black;background: rgba(156, 39, 176, 0.1)">
+            <div class="modal-body body" style="font-size:large;color: black;background: white">
                 {{story.story_flow}}
             </div>
             <!-- <div class="modal-footer justify-content-center">
