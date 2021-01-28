@@ -16,15 +16,6 @@
               <input class="form-control mr-sm-2 ml-4 mb-3" type="text" name="title" [(ngModel)]="searchTitle"
                 placeholder="Search title here .." (keydown.enter)="search()">
             </div>
-            <!-- <table>
-              <tr *ngFor="let title of titles">
-                <td>{{title.title}}</td>
-              </tr>
-            </table> -->
-            <!-- <div role="menu" >
-                <a class="waves-light" style="color:white;" mdbWavesEffect>cdcd</a>
-                <a class="waves-light" style="color:white;" mdbWavesEffect>cdcd</a>
-              </div> -->
           </form>
         </li>
       </ul>
@@ -41,28 +32,14 @@
 </div>
 
 <div class="container" *ngFor="let title of titles">
-      <div class="w-100 d-none d-md-block"></div>
-      <div class="col-6 col-sm-4">
-        {{title.title}}
-      </div>
- </div>
-
-<!-- stories -->
-<div class="stories">
-  <div class="images">
-    <img src="../../../../assets/images/fiction1.jpg" alt="">
-    <img src="../../../../assets/images/heart.jpg" alt="">
-    <img src="../../../../assets/images/Protector.jpg" alt="">
-    <img src="../../../../assets/images/image2.jpg" alt="">
-  </div>
-  <div class="images">
-    <img src="../../../../assets/images/image2.jpg" alt="">
-    <img src="../../../../assets/images/image4.jpg" alt="">
-    <img src="../../../../assets/images/image3.jpg" alt="">
-    <img src="../../../../assets/images/fiction1.jpg" alt="">
+  <div class="w-100 d-none d-md-block"></div>
+  <div class="col-6 col-sm-4">
+    {{title.title}}
   </div>
 </div>
-<div class="container-fluid purple lighten-1 mt-5 pb-3">
+
+<!-- stories -->
+<!-- <div class="container-fluid purple lighten-1 mt-5 pb-3">
   <h1 class="new_release_h1 pt-4 text-white"><b>New Release</b></h1>
   <div class="new_release p-5 d-flex justify-content-between">
     <div class="new_release_content d-flex">
@@ -81,8 +58,8 @@
           <button class="btn btn-info"><i class="fa fa-plus"></i> Add to Library</button>
         </div>
       </div>
-    </div>
-    <div class="new_release_content d-flex">
+    </div> -->
+<!-- <div class="new_release_content d-flex">
       <div>
         <img src="../../../../assets/images/landing1.jpg" alt="">
       </div>
@@ -98,12 +75,12 @@
           <button class="btn btn-info"><i class="fa fa-plus"></i> Add to Library</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
-  </div>
-</div>
+<!-- </div>
+</div> -->
 <!-- trending and most viewed -->
-<div class="container-fluid p-3 bg-white">
+<!-- <div class="container-fluid p-3 bg-white">
   <div class="d-flex justify-content-evenly">
     <div class="card-stories">
       <h3 style="background-color: purple lighten-1">Most Viewed Romance Story</h3>
@@ -179,7 +156,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- Carousel and body of page-->
 <mdb-carousel class="carousel slide carousel-fade " [animation]="'fade'">
   <mdb-carousel-item>
@@ -208,7 +185,14 @@
   </mdb-carousel-item>
 </mdb-carousel>
 <br><br>
-
+<div class="stories">
+    <div class="images">
+      <img src="../../../../assets/images/fiction1.jpg" alt="">
+      <img src="../../../../assets/images/heart.jpg" alt="">
+      <img src="../../../../assets/images/Protector.jpg" alt="">
+      <img src="../../../../assets/images/fantasy1.jpg" alt="">
+    </div>
+  </div>
 <section class="about-section" id="about">
   <div class="container-fluid p-0">
     <div class="row no-gutters position-relative">

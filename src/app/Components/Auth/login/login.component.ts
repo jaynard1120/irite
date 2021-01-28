@@ -63,6 +63,18 @@ export class LoginComponent implements OnInit {
 adminToken = localStorage.getItem("admin")
 userToken = localStorage.getItem("name")
   ngOnInit(): void {
+    this.service.getDeclined().subscribe(res => {
+      localStorage.removeItem("declined")
+      localStorage.setItem("declined", String(Object.keys(res).length))
+    })
+    this.service.getPublished().subscribe(res => {
+      localStorage.removeItem("published")
+      localStorage.setItem("published",String(Object.keys(res).length))
+    })
+    this.service.getUsers().subscribe(res => {
+      localStorage.removeItem("users")
+      localStorage.setItem("users",String(Object.keys(res).length))
+    })
     console.log(this.adminToken)
     if(this.adminToken != null){
       this.router.navigate(['admin/dashboard'])

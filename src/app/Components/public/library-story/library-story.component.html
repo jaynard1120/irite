@@ -1,40 +1,9 @@
-<!-- <div>
-    <img src="../../../../assets/images/Protector.jpg" alt="Snow" style="width:60%">
-    <div>{{story.title}}</div>
-    <div>
-        <button style="margin-left:6%" mdbBtn type="button" class="btn btn-info">Preview</button>
-        <button mdbBtn type="button" class="btn btn-danger">Delete</button>
-    </div>
-</div> -->
-
 <div class="card">
-    <img class="card-img-top" height="350px" src="../../../../assets/images/floyd.jpg" alt="Card image cap">
+    <img class="card-img-top" height="350px" src="../../../../assets/images/book2.png" alt="Card image cap">
     <div class="card-body text-center">
         <p class="card-title">{{story.title}}</p>
         <hr>
-        <!-- <p class="card-title">{{story.blurb}}</p> -->
-        <button style="margin-left:6%" mdbBtn type="button" class="btn btn-info" (click)="basicModal.show()">Preview</button>
+        <button style="margin-left:6%" mdbBtn type="button" class="btn btn-info" (click)="show()">Preview</button>
         <button mdbBtn type="button" class="btn btn-danger" (click)="delete()">Delete</button>
-    </div>
-</div>
-
-
-<div mdbModal #basicModal="mdbModal" class="modal fade right rounded" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="background-color:rgba(156, 39, 176, 0.7) ">
-                <button type="button" class="close pull-right" aria-label="Close" (click)="basicModal.hide()">
-                    <span aria-hidden="true">×</span>
-                </button>
-                <h4 class="modal-title" style="font-size:large;float:right" id="myModalLabel">{{story.title}}</h4>
-            </div>
-            <div class="modal-body body" style="font-size:large;color: black;background: white">
-                {{story.story_flow}}
-            </div>
-            <div class="modal-footer justify-content-center">
-                <input type="number" name="rating" id="">
-            </div>
-        </div>
     </div>
 </div>

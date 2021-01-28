@@ -8,6 +8,10 @@ export class ApiService {
   listTitle: any
 
   url = "https://irite-web-app.herokuapp.com/api/"
+  pageBase = false;
+  origin:any;
+  storyId:any;
+  story:any;
   constructor(private httpClient: HttpClient) {
     // this.httpClient.post()
   }
@@ -43,6 +47,7 @@ export class ApiService {
   }
   
   public approve(id:any){
+    console.log(id)
     return this.httpClient.post<any>(this.url+`publish/${id}`,true)
   }
 
@@ -67,6 +72,15 @@ export class ApiService {
 
   public deleteLibrary(id:any){
     return this.httpClient.delete<any>(this.url+`delete_from_library/${id}`)
+  }
+
+  public rate(id:any,story:any){
+    console.log(this.userId)
+    return this.httpClient.post<any>(this.url+`review/${id}/${story}`,true)
+  }
+
+  public getRate():Observable<any>{
+    return this.httpClient.get<any>(this.url+'review')
   }
 
   public addToLibrary(publishedStory:any){

@@ -35,8 +35,6 @@ export class RegisterComponent implements OnInit {
       this.router.navigate(['login'])
     }
     )
-    // this.router.navigate(['login'])
-    // this.service.getError().subscribe((res) => console.log(res)
     
   }
 

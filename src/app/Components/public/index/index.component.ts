@@ -17,11 +17,17 @@ export class IndexComponent implements OnInit {
   url = "http://127.0.0.1:8000/api/home"
   users:any;
 
-  ngOnInit(): void {
-    // this.service.getUsers(this.url).subscribe(res => this.users = res)
-  }
-  // data:any = ["../../../../assets/images/fiction1.jpg","../../../../assets/images/heart.jpg","../../../../assets/images/Protector.jpg"
-// ]
+  adminToken = localStorage.getItem("admin")
+  userToken = localStorage.getItem("name")
+    ngOnInit(): void {
+      console.log(this.adminToken)
+      if(this.adminToken != null){
+        this.router.navigate(['admin/dashboard'])
+      }
+      if(this.userToken != null){
+        this.router.navigate(['home'])
+      }
+    }
   searchTitle:any
   titles: any
   search(){
@@ -32,6 +38,5 @@ export class IndexComponent implements OnInit {
     },error => {
       console.log(error)
     })
-    // this.router.navigate(['login'])
   }
 }

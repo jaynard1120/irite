@@ -17,6 +17,11 @@ export class YourStoryComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  view(){
+    this.service.story = this.story
+    this.service.pageBase = true
+    this.router.navigate(['review'])
+  }
   remove(){
     console.log(this.story.id)
     this.service.deleteStory(this.story.id).subscribe(res => {

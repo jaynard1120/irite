@@ -1,0 +1,28 @@
+<div aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header purple lighten-1" style="color: white">
+                <a class="btn btn-primary" (click)="back()">Back</a>
+                <h5 class="modal-title w-100 font-weight-bold text-center" id="myModalLabel">
+                    {{story.title}}
+                </h5>
+
+            </div>
+            <div class="modal-body body" style="font-size:large">
+                Story:<br>
+
+                <div class="ml-5" id="story">
+                    <!-- {{story.story_flow}} -->
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" mdbBtn color="secondary" class="waves-light  rounded" mdbWavesEffect (click)="approve()"><i
+                        class="fa fa-thumbs-up" [hidden]="!icon"></i> <span class="spinner-border spinner-border-sm text-info"
+                        role="status" aria-hidden="true" [hidden]="icon"></span> {{approveBtn}}</button>
+                <button type="button" mdbBtn color="danger" class="relative waves-light rounded" mdbWavesEffect (click)="decline()"><i
+                        class="fa fa-thumbs-down"></i> {{declineBtn}}</button>
+            </div>
+        </div>
+
+    </div>
+</div>

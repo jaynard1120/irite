@@ -4,6 +4,7 @@ import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms'
 import { MDBBootstrapModule } from 'angular-bootstrap-md'
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ChartsModule } from 'ng2-charts';
 // import { MDBBootstrapModulesPro, MDB_DATE_OPTIONS } from 'ng-uikit-pro-standard';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,8 @@ import { PublishedAdminComponent } from './Components/Admin/published-admin/publ
 import { PublishedStoryComponent } from './Components/Admin/published-story/published-story.component';
 import { YourStoryComponent } from './Components/public/your-story/your-story.component';
 import { LibraryStoryComponent } from './Components/public/library-story/library-story.component';
+import { ReviewComponent } from './Components/public/review/review.component';
+import { StoryValComponent } from './Components/Admin/story-val/story-val.component';
   // import { from } from 'rxjs';
 
 @NgModule({
@@ -52,6 +55,8 @@ import { LibraryStoryComponent } from './Components/public/library-story/library
     PublishedStoryComponent,
     YourStoryComponent,
     LibraryStoryComponent,
+    ReviewComponent,
+    StoryValComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +66,7 @@ import { LibraryStoryComponent } from './Components/public/library-story/library
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
     AngularEditorModule,
+    ChartsModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [
