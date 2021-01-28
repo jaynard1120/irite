@@ -3,21 +3,31 @@
     crossorigin="anonymous">
 
 <div class="card mt-3 text-center cloudy-knoxville-gradient">
-        <div class="card-body">
-            Start reading stories?
+    <div class="card-body">
+        Start reading stories?
+    </div>
+</div>
+<br>
+
+<div style="margin:5% 45%;height: 50vh;" [hidden]="fetched">
+    <div class="spinner-border text-secondary text-center" style="font-size: xx-large;height: 200px;width: 200px;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<!-- <div class="row"  [hidden]="!fetched">
+    <div class="column bg-primary" *ngFor="let story of stories">
+        <app-library-story [story]="story"> </app-library-story>
+    </div>
+</div> -->
+
+<div class="grid-container" [hidden]="!fetched">
+        <div *ngFor="let story of stories">
+                <app-library-story [story]="story"> </app-library-story>
         </div>
     </div>
-<br>
-<div class="row">
-    <div class="column">
-        <img src="../../../../assets/images/Protector.jpg" alt="Snow" style="width:60%">
-        <div> 
-            <button style="margin-left:6%" mdbBtn type="button" class="btn btn-info">Preview</button>
-            <button mdbBtn type="button" class="btn btn-danger">Delete</button>
-        </div>  
-    </div>
 
-    <div class="column">
+<!-- <div class="column">
         <img src="../../../../assets/images/stranger.jpg" alt="Forest" style="width:60%">
         <div>
             <button style="margin-left:6%" mdbBtn type="button" class="btn btn-info">Preview</button>
@@ -55,6 +65,5 @@
             <button style="margin-left:6%" mdbBtn type="button" class="btn btn-info">Preview</button>
             <button mdbBtn type="button" class="btn btn-danger">Delete</button>
         </div>
-    </div>
-</div>
+    </div> -->
 <app-footer></app-footer>

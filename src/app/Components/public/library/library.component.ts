@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../Services/api.service';
 
 @Component({
   selector: 'app-library',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./library.component.css']
 })
 export class LibraryComponent implements OnInit {
-
-  constructor() { }
+  fetched:Boolean = true;
+  stories:any;
+  constructor(
+    private service: ApiService
+  ) { }
 
   ngOnInit(): void {
+    this.fetched = false;
+    this.service.getLibrary().subscribe(res => {
+      this.stories = res
+      this.fetched = true;
+    })
   }
 
 }

@@ -18,12 +18,11 @@
     box-sizing: border-box;
   }
   
-  .column {
+  /* .column {
     width: 30%;
     padding: 0 10px;
     margin: auto;
     height: 80%;
-    /* box-shadow: 2px grey; */
   }
   .category{
     font-size: xx-large;
@@ -57,4 +56,19 @@
     .column {
         width: 50%;
       }
-  }  
+  } 
+   */
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    padding: 10px;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    text-align: center;
+  }
+  
