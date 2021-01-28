@@ -4,6 +4,9 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators'
 @Injectable({ providedIn: 'root' })
 export class ApiService {
+
+  listTitle: any
+
   url = "https://irite-web-app.herokuapp.com/api/"
   constructor(private httpClient: HttpClient) {
     // this.httpClient.post()
@@ -12,6 +15,9 @@ export class ApiService {
   userId = localStorage.getItem('userId');
   // adminId = localStorage.getItem('adminId')
 
+  public getList(){
+    return this.listTitle
+  }
   public getUsers():Observable<any> {
     return this.httpClient.get(this.url+"users")
     .pipe(catchError(this.errorHandler))
@@ -23,6 +29,7 @@ export class ApiService {
 
   public addStory(story:any){
     return this.httpClient.post<any>(this.url+`add_story/${this.userId}`,story)
+    .pipe(catchError(this.errorHandler))
   }
 
   errors = []
@@ -49,6 +56,23 @@ export class ApiService {
   public getDeclined(){
     return this.httpClient.get(this.url+"declined")
   }
+
+  public yourStory(user: any):Observable<any>{
+    return this.httpClient.get(this.url+`published_stry/${user}`)
+  }
+
+  public addToLibrary(publishedStory:any){
+    return this.httpClient.post<any>(this.url+`add_to_library/${publishedStory}`,true)
+  }
+
+  public searchGenre(genre:any):Observable<any>{
+    return this.httpClient.get(this.url+`search/genre/${genre}`)
+  }
+
+  public search(title:any):Observable<any>{
+    return this.httpClient.get(this.url+`search/${title}`)
+  }
+
   public logout(){
     console.log(this.userId)
     return this.httpClient.post<any>(this.url+`logout/${this.userId}`,true)
@@ -57,7 +81,8 @@ export class ApiService {
 logErrors: any;
 errorHandler(error: HttpErrorResponse){
   this.logErrors = error.error.errors
-  return error.error.errors
+  // console.log(this.logErrors);
+  return throwError(error)
 }
 
 

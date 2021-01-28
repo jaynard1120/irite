@@ -2,10 +2,12 @@
   <img class="card-img-top" height="350px" src="../../../../assets/images/floyd.jpg" alt="Card image cap">
   <div class="card-body text-center">
     <p class="card-title">{{cover.title}}</p>
+    <hr>
     <p class="card-title">{{cover.blurb}}</p>
-    <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect>View <i
-        class="fa fa-angle-double-right"></i></a>
-    <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect> <i class="fa fa-plus">
-        Add</i></a>
+    <!-- <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect>View <i
+        class="fa fa-angle-double-right"></i></a> -->
+    <a mdbBtn gradient="purple" style="font-size: x-small;" class="waves-light" mdbWavesEffect
+    (click)="addToLibrary()"> <i class="fa fa-plus">
+        Add to Library</i></a>
   </div>
 </div>

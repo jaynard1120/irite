@@ -6,9 +6,9 @@
     </div>
 </div>
 
-<div class="row mt-4 mb-5 young-passion-gradient" style="width: 98%;margin: auto;">
+<div class="row mt-4 mb-5 " style="width: 98%;margin: auto;">
     <div class="col-sm-4 mt-5">
-    <mdb-card class="addImage" style="background-image: url('../../../../assets/images/imageIcon.png')">
+        <mdb-card class="addImage" style="background-image: url('../../../../assets/images/imageIcon.png')">
             <div class="view rgba-white-slight waves-light" mdbWavesEffect>
                 <!-- <mdb-card-img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap"></mdb-card-img> -->
                 <a>
@@ -16,9 +16,10 @@
                 </a>
             </div>
             <mdb-card-body class="text-center">
-                <input hidden type='file' id="imageUpload" accept=".png, .jpg, .jpeg" [(ngModel)]="image" #fileInput (change)="handleFileInput($event)" />
+                <input hidden type='file' id="imageUpload" accept=".png, .jpg, .jpeg" [(ngModel)]="image" #fileInput
+                    (change)="handleFileInput($event)" />
                 <button style="margin-top: 70%;color: black;" mdbBtn gradient="aqua" class="waves-light rounded" type="file"
-                (click)="fileInput.click()" mdbWavesEffect><i style="font-size: xx-large;" class="fa fa-plus"></i></button>
+                    (click)="fileInput.click()" mdbWavesEffect><i style="font-size: xx-large;" class="fa fa-plus"></i></button>
 
             </mdb-card-body>
         </mdb-card>
@@ -26,36 +27,65 @@
     <div class="col-sm-8 mt-5 mb-5">
         <mdb-card>
             <mdb-card-body class="px-lg-5 pt-0">
-                <form class="text-center" style="color: #757575;" [formGroup]="book" >
-                    <div class="md-form mt-3">
-                        <input type="text" id="title" name="title" formControlName="title" class="form-control" mdbInput>
+                <form class="text-center" style="color: #757575;" [formGroup]="book" autocomplete="off">
+                    <div class="md-form mt-3 pt-10">
+                        <input type="text" id="title" name="title" formControlName="title" class="form-control"
+                            mdbInput>
                         <label for="title"><span style="color: red;">*</span>Title</label>
+                        <!-- <div *ngIf="book.get('title').touched && book.get('title').invalid" id="procedures-feedback"
+                            class="invalid-feedback">
+                            <mdb-error class="alert-danger mt-1" *ngIf="book.get('title').errors.required"
+                                style="width: 100%;">Title is required!
+                            </mdb-error>
+
+
+
+                        [ngClass]="{'is-invalid' : book.get('title').touched && book.get('title').invalid}"
+                        </div> -->
                     </div>
-                    <!-- <input type="text" id="materialContactFormEmail" class="form-control" mdbInput>
-                        <label for="materialContactFormEmail">Genre</label> -->
-                        <span class="d-flex justify-content-start mb-2"><i style="color: red;">*</i>Genre</span>
+                    <span class="d-flex justify-content-start mb-2"><i style="color: red;">*</i>Genre</span>
                     <div class="mx-auto d-flex justify-content-start mb-3">
                         <mdb-checkbox [default]="true" name="romance" formControlName="romance" class="ml-4">Romance</mdb-checkbox>
                         <mdb-checkbox [default]="true" name="fiction" formControlName="fiction" class="ml-4">Fiction</mdb-checkbox>
                         <mdb-checkbox [default]="true" name="horror" formControlName="horror" class="ml-4">Horror</mdb-checkbox>
                         <mdb-checkbox [default]="true" name="thriller" formControlName="thriller" class="ml-4">Thriller</mdb-checkbox>
-                        <mdb-checkbox [default]="true" name="scifi" formControlName="scifi" class="ml-4">Science Fiction</mdb-checkbox>
+                        <mdb-checkbox [default]="true" name="scifi" formControlName="scifi" class="ml-4">Science
+                            Fiction</mdb-checkbox>
                     </div> <span>Write short description here:</span>
                     <div class="md-form">
-                        <!-- <textarea type="text" style="height: 200px;" placeholder="Short Description" #blurb
-                            class="form-control md-textarea" formControlName="blurb" name="blurb"  mdbInput></textarea> -->
-                            <angular-editor placeholder="Short Description" formControlName="blurb" [config]="editorConfig"></angular-editor>
+                        <textarea name="blurb" placeholder="Enter your short description here!" style="max-height:100px;min-height:50px" formControlName="blurb" cols="100" rows="3"></textarea>
+                        <!-- <angular-editor placeholder="Short Description" class="text-area"
+                        formControlName="blurb" [config]="editorConfig"></angular-editor> -->
+                        <!-- <div *ngIf="book.get('blurb').touched && book.get('blurb').invalid" id="procedures-feedback"
+                            class="invalid-feedback">
+                            <mdb-error class="alert-danger mt-1" *ngIf="book.get('blurb').errors.required"
+                                style="width: 100%;">This field is required!
+                            </mdb-error>
+
+                            [ngClass]="{'is-invalid' : book.get('blurb').touched && book.get('blurb').invalid}"
+                        </div> -->
                     </div>
-                    <!-- <p>{{blurb.value}}</p> -->
                     <span>Write your story here:</span>
                     <div class="md-form">
-                        <angular-editor placeholder="Story Flow" formControlName="story" [config]="editorConfig"></angular-editor>
+                        <angular-editor placeholder="Story Flow" formControlName="story" style="max-height:100px;min-height:50px"
+                        [config]="editorConfig"></angular-editor>
+                        <!-- <div *ngIf="book.get('story').touched && book.get('story').invalid" id="procedures-feedback"
+                            class="invalid-feedback">
+                            <mdb-error class="alert-danger mt-1" *ngIf="book.get('story').errors.required"
+                                style="width: 100%;">This field is required!
+                            </mdb-error>
+
+
+
+                        [ngClass]="{'is-invalid' : book.get('story').touched && book.get('story').invalid}"
+                        </div> -->
                     </div>
-                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;"
-                        class="z-depth-0 my-4 waves-effect float-right" mdbWavesEffect>Save as draft</button>
-                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;"
-                        class="z-depth-0 my-4 waves-effect float-right" (click)="publish()"
-                        mdbWavesEffect>PUBLISH</button>
+                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right"
+                        mdbWavesEffect>Save as draft</button>
+                    <button mdbBtn gradient="peach" style="color: black;font-weight: bold;" class="z-depth-0 my-4 waves-effect float-right"
+                    [disabled]="book.invalid && icon" (click)="publish()" mdbWavesEffect>
+                        <span class="spinner-border spinner-border-sm text-secondary" role="status" aria-hidden="true"
+                            [hidden]="icon"></span>{{button}}</button>
                 </form>
             </mdb-card-body>
 

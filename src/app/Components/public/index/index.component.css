@@ -65,59 +65,48 @@ input.form-control{
 .d-flex button{
     margin: 0vw 0.6vw 0vw 0vw;
 }
-@media screen and (max-width: 600px) {
-    .stories{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        
-    }
-    .images{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+/* trending and most viewed*/
+.card-stories{
+  box-shadow: 0px 1px 20px 1px grey;
+  margin: 2vw 1.5vw;
+  border-radius: 3px;
+  padding: 2vw 2vw;
+}
+.card-stories h3{
+  letter-spacing: 1px;
+  
+}
+.card-stories img{
+  width: 100%;
+  max-width: 25%;
+}
+/* .trending img{
+  width: 100%;
+  max-width: 30%;
+} */
+.card-story{
+  display: flex;
+  padding: 1.5vw 1vw;
+  flex-direction: column;
+  margin: 2vw 0vw;
+}
+.card-stories-col{
+  padding: 1vw 1vw;
+}
+.card-stories-col p{
+  text-align: justify;
 
-    }
-    .stories img{
-        width: 100%;
-        max-width: 70%;
-        height: 300px;
-        /* min-height: 20%; */
-        /* margin: 3vw 0.5vw; */
-    }
-    .new_release{
-        flex-direction: column;
-        align-items: center;
-    }
-    .new_release div img{
-        width: 100%;
-        max-width: 100%;
-    }
-    .new_release h1{
-        text-align: center;
-        font-size: 5.5vw;
-    }
-    .new_release p{
-        text-align: justify;
-        font-size: 3vw;
-    }
-    .new_release_h1 h1{
-        font-size: 5.5vw;
-    }
-    .new_release_content{
-        display: flex;
-        flex-direction: column;
-    }
-    .d-flex button{
-        display: flex;
-        justify-content: space-evenly;
-    }
-
+}
+.card-stories-col p.rating{
+  border-radius: 40px;
+  padding: 0.2vw 1vw;
+  color: white;
 }
 
 
-@import url("https://use.fontawesome.com/releases/v5.6.1/css/all.css");
-@import url("https://fonts.googleapis.com/css?family=Cairo:300,600,700,900");
+
+/* @import url("https://use.fontawesome.com/releases/v5.6.1/css/all.css");
+@import url("https://fonts.googleapis.com/css?family=Cairo:300,600,700,900"); */
 
 body {
   font-family: "Cairo", sans-serif;
@@ -145,17 +134,18 @@ p {
   color: #6c757d;
 }
 
-img {
+/* img {
   max-width: 100%;
-}
+  width: 100%;
+
+} */
 
 .about-section {
   width: 100%;
   height: 100vh;
 }
 
-.left-header {
-  position: sticky;
+ .left-header {
   top: 0;
   left: 0;
   color: #fff;
@@ -170,7 +160,7 @@ img {
     url("https://images.unsplash.com/photo-1494809610410-160faaed4de0?https://images.unsplash.com/photo-1529007196863-d07650a3f0ea?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NTB8fGJvb2tzaGVsZnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAzfHxib29rc3xlbnwwfHwwfA%3D%3D&auto=format&fit=crop&w=500&q=60");
   background-size: cover;
   padding: 4rem;
-}
+} 
 
 .left-header::before {
   background-color: #fff;
@@ -255,4 +245,64 @@ img {
   .left-header::after {
     height: 85%;
   }
+}
+@media screen and (max-width: 600px) {
+  .stories{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      
+  }
+  .images{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+  }
+  .stories img{
+      width: 100%;
+      max-width: 70%;
+      height: 200px;
+      /* min-height: 20%; */
+      /* margin: 3vw 0.5vw; */
+  }
+  .new_release{
+      flex-direction: column;
+      align-items: center;
+  }
+  .new_release div img{
+      width: 100%;
+      max-width: 100%;
+  }
+  .new_release h1{
+      text-align: center;
+      font-size: 5.5vw;
+  }
+  .new_release p{
+      text-align: justify;
+      font-size: 3vw;
+  }
+  .new_release_h1 h1{
+      font-size: 5.5vw;
+  }
+  .new_release_content{
+      display: flex;
+      flex-direction: column;
+  }
+  .d-flex button{
+      display: flex;
+      justify-content: space-evenly;
+
+  }
+
+  .card-stories{
+    display:flex;
+    flex-direction: column;
+  }
+
+}
+
+/* avatar */
+.grid-container{
+  justify-content: space-around; 
 }

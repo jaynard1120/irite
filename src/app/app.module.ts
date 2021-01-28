@@ -25,6 +25,7 @@ import { DeclinedComponent } from './Components/Admin/declined/declined.componen
 import { AdminHeaderComponent } from './Components/Admin/admin-header/admin-header.component';
 import { PublishedAdminComponent } from './Components/Admin/published-admin/published-admin.component';
 import { PublishedStoryComponent } from './Components/Admin/published-story/published-story.component';
+import { YourStoryComponent } from './Components/public/your-story/your-story.component';
   // import { from } from 'rxjs';
 
 @NgModule({
@@ -48,6 +49,7 @@ import { PublishedStoryComponent } from './Components/Admin/published-story/publ
     AdminHeaderComponent,
     PublishedAdminComponent,
     PublishedStoryComponent,
+    YourStoryComponent,
   ],
   imports: [
     BrowserModule,

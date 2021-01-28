@@ -16,18 +16,27 @@ export class StoryComponent implements OnInit {
 @Input() story:any;
   ngOnInit(): void {
   }
-
+icon:Boolean = true;
+declineIcon = true
+approveBtn = "APPROVE"
+declineBtn = "DECLINE"
   approve(){
+    this.icon = false
+    this.approveBtn = "APPROVING..."
     this.service.approve(this.story.id).subscribe(res => {
       console.log(res)
+      this.router.navigate(['admin/published'])
     },error => {
       console.log(error)
     })
   }
 
   decline(){
+    this.declineIcon = false
+    this.declineBtn = "DECLINING.."
     this.service.decline(this.story.id).subscribe(res => {
       console.log(res)
+      this.router.navigate(['admin/declined'])
     },error => {
       console.log(error);
     })
