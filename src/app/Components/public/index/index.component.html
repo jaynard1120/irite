@@ -31,9 +31,9 @@
   </mdb-navbar>
 </div>
 
-<div class="container" *ngFor="let title of titles">
+<div class="container" style="width: 100%;cursor: pointer;" *ngFor="let title of titles">
   <div class="w-100 d-none d-md-block"></div>
-  <div class="col-6 col-sm-4">
+  <div class="col-6 col-sm-4  mt-3 mb-3" [routerLink]="['/login']" routerLinkActive="router-link-active" >
     {{title.title}}
   </div>
 </div>
