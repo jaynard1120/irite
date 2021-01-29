@@ -28,6 +28,12 @@ export class HomeComponent implements OnInit {
     this.listBooks = data
   }
 
+  all(){
+    this.service.getPublished().subscribe(res => {
+      this.listBooks = res
+    })
+  }
+
   romance(){
     console.log("romance!");
     this.service.searchGenre("romance").subscribe(res => {
