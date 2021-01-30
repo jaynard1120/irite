@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
   userAccount: any;
   ngOnInit(): void {
     let currentDate = new Date();
-    this.date = String(currentDate.getMonth()+1+"-"+currentDate.getDate()+"-"+currentDate.getFullYear()) 
+    this.date = String(currentDate.getFullYear()+"-"+ currentDate.getMonth()+1+"-"+currentDate.getDate()) 
     console.log(this.date)
     this.userAccount = this.fb.group({
       username: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(8)]],

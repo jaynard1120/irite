@@ -39,7 +39,7 @@
                 </div>
                 <div class="col">
                   <div class="md-form">
-                    <input type="date" id="materialRegisterFormLastName" formControlName="dateOfBirth" max="{{date}}" aria-valuemax="{{date}}"
+                    <input type="date" id="materialRegisterFormLastName" formControlName="dateOfBirth" max="{{date}}" name="dateOfBirth"
                       [ngClass]="{'is-invalid' : userAccount.get('dateOfBirth').touched && userAccount.get('dateOfBirth').invalid}"
                       class="form-control" mdbInput>
                     <label for="materialRegisterFormLastName">Date of Birth: </label>
