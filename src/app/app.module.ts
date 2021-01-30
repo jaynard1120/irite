@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms'
@@ -13,7 +13,6 @@ import { IndexComponent } from './Components/public/index/index.component';
 import { RegisterComponent } from './Components/Auth/register/register.component';
 import { HomeComponent } from './Components/public/home/home.component';
 import { LibraryComponent } from './Components/public/library/library.component';
-import { AdminLoginComponent } from './Components/Auth/admin-login/admin-login.component';
 import { HeaderComponent } from './Components/Navigation/header/header.component';
 import { FooterComponent } from './Components/Navigation/footer/footer.component';
 import { PublishedComponent } from './Components/public/published/published.component';
@@ -40,7 +39,6 @@ import { StoryValComponent } from './Components/Admin/story-val/story-val.compon
     RegisterComponent,
     HomeComponent,
     LibraryComponent,
-    AdminLoginComponent,
     HeaderComponent,
     FooterComponent,
     PublishedComponent,
@@ -70,7 +68,6 @@ import { StoryValComponent } from './Components/Admin/story-val/story-val.compon
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [
-    // {provide: MDB_DATE_OPTIONS,}
   ],
   bootstrap: [AppComponent]
 })

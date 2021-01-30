@@ -20,7 +20,13 @@ import { Component, Input, OnInit } from '@angular/core';
 </table>
   `,
   styles: [
-    `table{width:90%;margin:auto;margin-top:2%}`
+    `table{width:90%;margin:auto;margin-top:2%}
+    td{
+      font-size: large;
+    }
+    th{
+      font-size: larger;
+    }`
   ]
 })
 export class PublishedStoryComponent implements OnInit {

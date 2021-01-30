@@ -20,7 +20,6 @@ export class IndexComponent implements OnInit {
   adminToken = localStorage.getItem("admin")
   userToken = localStorage.getItem("name")
     ngOnInit(): void {
-      console.log(this.adminToken)
       if(this.adminToken != null){
         this.router.navigate(['admin/dashboard'])
       }
@@ -31,12 +30,10 @@ export class IndexComponent implements OnInit {
   searchTitle:any
   titles: any
   search(){
-    console.log(this.searchTitle)
     this.service.search(this.searchTitle).subscribe(res => {
-      console.log(res)
       this.titles = res
     },error => {
-      console.log(error)
+      console.log("Did not exist!")
     })
   }
 }

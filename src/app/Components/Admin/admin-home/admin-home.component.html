@@ -1,21 +1,44 @@
 <app-admin-header></app-admin-header>
 
-<div class="row">
-    <div class="col-md-3 mx-auto my-5 rounded">
-        <mdb-card>
+<div class="row mt-5">
+    <div class="col-md-4 mx-auto my-5 rounded">
+        <mdb-card style="width: 50%;margin: auto;">
             <div class="view overlay waves-light" mdbWavesEffect>
             </div>
             <mdb-card-body class="elegant-color white-text">
                 <a class="activator px-3 mr-2 mb-5">
                     <i style="font-size:50px;float:left" class="fa fa-users"></i>
-                    <h2 style="float:right">{{users}} &nbsp; Users</h2>
+                    <h2 style="float:right">{{users-1}} &nbsp; Users</h2>
                 </a>
             </mdb-card-body>
         </mdb-card>
+        <div class="chart-wrapper mt-5" style="width: 100%;">
+            <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+            </canvas>
+        </div>
+    </div>
+    <div class="col my-5">
+        <span style="font-size: x-large;font-weight: bold;" class="pb-4">Registered Users!</span>
+        <table mdbTable style="width: 95%;">
+            <thead class="black white-text">
+                <tr>
+                    <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr mdbTableCol *ngFor="let list of usersList" >
+                    <td *ngIf="list.username != 'admin'"  >{{list.username}}</td>
+                    <td *ngIf="list.username != 'admin'">{{list.email}}</td>
+                    <td *ngIf="list.username != 'admin'">{{list["date-of-birth"]}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div style="margin:3% 45%;"  [hidden]="fetched" >
+            <div class="spinner-border text-secondary text-center" style="font-size: xx-large;height: 200px;width: 200px;"role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        
     </div>
 </div>
 
-<div class="chart-wrapper">
-    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
-    </canvas>
-</div>

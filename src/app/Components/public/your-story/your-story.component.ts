@@ -23,9 +23,7 @@ export class YourStoryComponent implements OnInit {
     this.router.navigate(['review'])
   }
   remove(){
-    console.log(this.story.id)
     this.service.deleteStory(this.story.id).subscribe(res => {
-      console.log(res)
       this.router.navigate(['home'])
     })
   }

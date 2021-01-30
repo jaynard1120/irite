@@ -1,1 +1,7 @@
 table{width:90%;margin:auto;margin-top:2%}
+td{
+    font-size: large;
+  }
+  th{
+    font-size: larger;
+  }

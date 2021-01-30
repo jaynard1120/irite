@@ -28,9 +28,7 @@ export class ReviewComponent implements OnInit {
     (<HTMLInputElement>document.getElementById('story')).innerHTML = this.story.story_flow
   }
   rate(data: any) {
-    console.log(this.story)
     this.service.rate(this.story.reader_id,this.story.id).subscribe(res => {
-      console.log(res)
     })
   }
 

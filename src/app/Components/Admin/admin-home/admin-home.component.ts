@@ -14,11 +14,17 @@ export class AdminHomeComponent implements OnInit {
     private service: ApiService,
     private router: Router
   ) { }
+  usersList:any;
+  fetched:Boolean = false;
+  headElements = ["Username","Email Address","Birthdate"]
   ngOnInit(): void {
-   
+   this.service.getUsers().subscribe(res => {
+     this.usersList = res
+     this.fetched = true
+   })
     
   }
-  users = localStorage.getItem("users")
+  users:number = Number(localStorage.getItem("users"))
   published = localStorage.getItem("published")
   declined = localStorage.getItem("declined")
 doughnutChartLabels: Label[] = ['Published Stories', 'Declined Stories'];

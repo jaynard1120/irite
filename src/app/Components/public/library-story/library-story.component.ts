@@ -22,10 +22,6 @@ export class LibraryStoryComponent implements OnInit {
     this.user = this.fb.group({
       rate : new FormControl('',[Validators.min(0),Validators.max(5)])
     })
-
-    // this.service.getRate().subscribe(res => {
-    //   console.log(res)
-    // })
   }
 
   show(){
@@ -35,20 +31,9 @@ export class LibraryStoryComponent implements OnInit {
     this.router.navigate(["review"])
   }
 
-  // rate(data:any){
-  //   this.service.rate().subscribe(res =>{
-  //     console.log(res)
-  //   })
-  // }
   delete() {
-    console.log(this.story)
     this.service.deleteLibrary(this.story.id).subscribe(res => {
-      console.log(res)
       this.router.navigate(['home'])
     })
-    // this.service.deleteLibrary(this.story.id).subscribe(res => {
-    //   console.log(res)
-    //   this.router.navigate(['library'])
-    // })
   }
 }

@@ -16,8 +16,12 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder
   ) { }
   // check:Boolean = false;
+  date:any;
   userAccount: any;
   ngOnInit(): void {
+    let currentDate = new Date();
+    this.date = String(currentDate.getMonth()+1+"-"+currentDate.getDate()+"-"+currentDate.getFullYear()) 
+    console.log(this.date)
     this.userAccount = this.fb.group({
       username: ['',[Validators.required,Validators.minLength(5),Validators.maxLength(8)]],
       dateOfBirth: ['',Validators.required],

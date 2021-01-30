@@ -13,9 +13,9 @@ export class ApiService {
   storyId:any;
   story:any;
   constructor(private httpClient: HttpClient) {
-    // this.httpClient.post()
+    
   }
-
+  library:any;
   userId = localStorage.getItem('userId');
   // adminId = localStorage.getItem('adminId')
 
@@ -47,7 +47,7 @@ export class ApiService {
   }
   
   public approve(id:any){
-    console.log(id)
+    // console.log(id)
     return this.httpClient.post<any>(this.url+`publish/${id}`,true)
   }
 
@@ -75,7 +75,6 @@ export class ApiService {
   }
 
   public rate(id:any,story:any){
-    console.log(this.userId)
     return this.httpClient.post<any>(this.url+`review/${id}/${story}`,true)
   }
 
@@ -100,14 +99,12 @@ export class ApiService {
   }
 
   public logout(){
-    console.log(this.userId)
     return this.httpClient.post<any>(this.url+`logout/${this.userId}`,true)
   }
 
 logErrors: any;
 errorHandler(error: HttpErrorResponse){
   this.logErrors = error.error.errors
-  // console.log(this.logErrors);
   return throwError(error)
 }
 

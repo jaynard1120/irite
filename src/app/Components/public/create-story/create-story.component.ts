@@ -49,9 +49,7 @@ display(){
         this.newGenre.push(key)
       }
     })
-    console.log(this.newGenre)
   }
-  // imageName = "imageIcon.png"
   icon:Boolean = true
   button = "PUBLISH"
   publish() {
@@ -65,7 +63,6 @@ display(){
         this.router.navigate(["home"])
       },error => {
         this.book.reset()
-        console.log(error)
         this.router.navigate(["home"])
       })
   }
@@ -74,13 +71,11 @@ display(){
 
   handleFileInput(event: any){
     this.files = event.target.files[0];
-    console.log(this.files.name)
   }
 
   editorConfig: AngularEditorConfig = {
     editable: true,
       spellcheck: true,
-      // height: 'auto',
       minHeight: '40',
       maxHeight: '50',
       width: 'auto',

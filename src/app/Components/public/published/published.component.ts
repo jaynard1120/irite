@@ -15,7 +15,6 @@ export class PublishedComponent implements OnInit {
 stories: any;
   ngOnInit(): void {
     this.service.yourStory(this.service.userId).subscribe(res => {
-      console.log(res)
       this.fetched = true;
       this.stories = res
     })
